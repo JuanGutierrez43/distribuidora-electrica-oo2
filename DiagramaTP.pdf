@@ -65,13 +65,13 @@
   <dia:layer name="Fondo" visible="true" active="true">
     <dia:object type="UML - Class" version="0" id="O0">
       <dia:attribute name="obj_pos">
-        <dia:point val="3.75,4.1"/>
+        <dia:point val="-13.45,8.35"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="3.7,4.05;10.845,9.35"/>
+        <dia:rectangle val="-13.5,8.3;-6.355,13.6"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
-        <dia:point val="3.75,4.1"/>
+        <dia:point val="-13.45,8.35"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
         <dia:real val="7.0449999999999999"/>
@@ -238,7 +238,7 @@
         </dia:composite>
         <dia:composite type="umlattribute">
           <dia:attribute name="name">
-            <dia:string>#lstZona#</dia:string>
+            <dia:string>#lstZonas#</dia:string>
           </dia:attribute>
           <dia:attribute name="type">
             <dia:string>#Zona#</dia:string>
@@ -271,7 +271,7 @@
         <dia:point val="42.5,11.1"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="42.45,11.05;53.83,16.95"/>
+        <dia:rectangle val="42.45,11.05;53.83,15.35"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
         <dia:point val="42.5,11.1"/>
@@ -280,7 +280,7 @@
         <dia:real val="11.279999999999999"/>
       </dia:attribute>
       <dia:attribute name="elem_height">
-        <dia:real val="5.8000000000000007"/>
+        <dia:real val="4.2000000000000002"/>
       </dia:attribute>
       <dia:attribute name="name">
         <dia:string>#Zona#</dia:string>
@@ -395,53 +395,7 @@
         </dia:composite>
         <dia:composite type="umlattribute">
           <dia:attribute name="name">
-            <dia:string>#localidad#</dia:string>
-          </dia:attribute>
-          <dia:attribute name="type">
-            <dia:string>#String#</dia:string>
-          </dia:attribute>
-          <dia:attribute name="value">
-            <dia:string>##</dia:string>
-          </dia:attribute>
-          <dia:attribute name="comment">
-            <dia:string>##</dia:string>
-          </dia:attribute>
-          <dia:attribute name="visibility">
-            <dia:enum val="1"/>
-          </dia:attribute>
-          <dia:attribute name="abstract">
-            <dia:boolean val="false"/>
-          </dia:attribute>
-          <dia:attribute name="class_scope">
-            <dia:boolean val="false"/>
-          </dia:attribute>
-        </dia:composite>
-        <dia:composite type="umlattribute">
-          <dia:attribute name="name">
-            <dia:string>#provincia#</dia:string>
-          </dia:attribute>
-          <dia:attribute name="type">
-            <dia:string>#String#</dia:string>
-          </dia:attribute>
-          <dia:attribute name="value">
-            <dia:string>##</dia:string>
-          </dia:attribute>
-          <dia:attribute name="comment">
-            <dia:string>##</dia:string>
-          </dia:attribute>
-          <dia:attribute name="visibility">
-            <dia:enum val="1"/>
-          </dia:attribute>
-          <dia:attribute name="abstract">
-            <dia:boolean val="false"/>
-          </dia:attribute>
-          <dia:attribute name="class_scope">
-            <dia:boolean val="false"/>
-          </dia:attribute>
-        </dia:composite>
-        <dia:composite type="umlattribute">
-          <dia:attribute name="name">
-            <dia:string>#pais#</dia:string>
+            <dia:string>#descripcion#</dia:string>
           </dia:attribute>
           <dia:attribute name="type">
             <dia:string>#String#</dia:string>
@@ -1078,7 +1032,7 @@ devuelve el consumo#</dia:string>
         <dia:point val="37.05,21.05"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="37,21;44.53,27.1"/>
+        <dia:rectangle val="37,21;44.53,26.3"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
         <dia:point val="37.05,21.05"/>
@@ -1087,7 +1041,7 @@ devuelve el consumo#</dia:string>
         <dia:real val="7.4299999999999997"/>
       </dia:attribute>
       <dia:attribute name="elem_height">
-        <dia:real val="6"/>
+        <dia:real val="5.2000000000000011"/>
       </dia:attribute>
       <dia:attribute name="name">
         <dia:string>#Medidor#</dia:string>
@@ -1202,31 +1156,6 @@ devuelve el consumo#</dia:string>
         </dia:composite>
         <dia:composite type="umlattribute">
           <dia:attribute name="name">
-            <dia:string>#tension#</dia:string>
-          </dia:attribute>
-          <dia:attribute name="type">
-            <dia:string>#String#</dia:string>
-          </dia:attribute>
-          <dia:attribute name="value">
-            <dia:string>##</dia:string>
-          </dia:attribute>
-          <dia:attribute name="comment">
-            <dia:string>#la tensión con la que se efectúa el suministro (alta, media y baja tensión, AT, MT, BT)
-Si consume hasta 300 y soy bt va una tarifa
-Si supero los 300 calculo con otra factura#</dia:string>
-          </dia:attribute>
-          <dia:attribute name="visibility">
-            <dia:enum val="1"/>
-          </dia:attribute>
-          <dia:attribute name="abstract">
-            <dia:boolean val="false"/>
-          </dia:attribute>
-          <dia:attribute name="class_scope">
-            <dia:boolean val="false"/>
-          </dia:attribute>
-        </dia:composite>
-        <dia:composite type="umlattribute">
-          <dia:attribute name="name">
             <dia:string>#zona#</dia:string>
           </dia:attribute>
           <dia:attribute name="type">
@@ -1303,13 +1232,13 @@ Si supero los 300 calculo con otra factura#</dia:string>
     </dia:object>
     <dia:object type="UML - Class" version="0" id="O5">
       <dia:attribute name="obj_pos">
-        <dia:point val="-1.9,22.15"/>
+        <dia:point val="-2.5,22.6"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="-1.95,22.1;6.35,28.2"/>
+        <dia:rectangle val="-2.55,22.55;5.75,28.65"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
-        <dia:point val="-1.9,22.15"/>
+        <dia:point val="-2.5,22.6"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
         <dia:real val="8.1999999999999993"/>
@@ -1532,7 +1461,7 @@ Si supero los 300 calculo con otra factura#</dia:string>
         <dia:point val="24.95,32.925"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="24.9,32.875;39.36,37.975"/>
+        <dia:rectangle val="24.9,32.875;39.36,38.775"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
         <dia:point val="24.95,32.925"/>
@@ -1541,7 +1470,7 @@ Si supero los 300 calculo con otra factura#</dia:string>
         <dia:real val="14.359999999999999"/>
       </dia:attribute>
       <dia:attribute name="elem_height">
-        <dia:real val="5"/>
+        <dia:real val="5.7999999999999998"/>
       </dia:attribute>
       <dia:attribute name="name">
         <dia:string>#AltaDemanda#</dia:string>
@@ -1705,6 +1634,36 @@ Si supero los 300 calculo con otra factura#</dia:string>
         <dia:composite type="umloperation">
           <dia:attribute name="name">
             <dia:string>#calcularTotal#</dia:string>
+          </dia:attribute>
+          <dia:attribute name="stereotype">
+            <dia:string>##</dia:string>
+          </dia:attribute>
+          <dia:attribute name="type">
+            <dia:string>#double#</dia:string>
+          </dia:attribute>
+          <dia:attribute name="visibility">
+            <dia:enum val="0"/>
+          </dia:attribute>
+          <dia:attribute name="comment">
+            <dia:string>##</dia:string>
+          </dia:attribute>
+          <dia:attribute name="abstract">
+            <dia:boolean val="false"/>
+          </dia:attribute>
+          <dia:attribute name="inheritance_type">
+            <dia:enum val="2"/>
+          </dia:attribute>
+          <dia:attribute name="query">
+            <dia:boolean val="false"/>
+          </dia:attribute>
+          <dia:attribute name="class_scope">
+            <dia:boolean val="false"/>
+          </dia:attribute>
+          <dia:attribute name="parameters"/>
+        </dia:composite>
+        <dia:composite type="umloperation">
+          <dia:attribute name="name">
+            <dia:string>#calcularConsumo#</dia:string>
           </dia:attribute>
           <dia:attribute name="stereotype">
             <dia:string>##</dia:string>
@@ -1951,16 +1910,16 @@ Si supero los 300 calculo con otra factura#</dia:string>
     </dia:object>
     <dia:object type="UML - Generalization" version="1" id="O8">
       <dia:attribute name="obj_pos">
-        <dia:point val="40.765,27.1004"/>
+        <dia:point val="40.765,26.2962"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="39.915,27.0504;46.22,32.975"/>
+        <dia:rectangle val="39.915,26.2462;46.22,32.975"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
       </dia:attribute>
       <dia:attribute name="orth_points">
-        <dia:point val="40.765,27.1004"/>
+        <dia:point val="40.765,26.2962"/>
         <dia:point val="40.765,28.55"/>
         <dia:point val="46.17,28.55"/>
         <dia:point val="46.17,32.925"/>
@@ -1986,25 +1945,25 @@ Si supero los 300 calculo con otra factura#</dia:string>
         <dia:string>##</dia:string>
       </dia:attribute>
       <dia:connections>
-        <dia:connection handle="0" to="O4" connection="18"/>
+        <dia:connection handle="0" to="O4" connection="16"/>
         <dia:connection handle="1" to="O7" connection="16"/>
       </dia:connections>
     </dia:object>
     <dia:object type="UML - Generalization" version="1" id="O9">
       <dia:attribute name="obj_pos">
-        <dia:point val="40.765,27.0963"/>
+        <dia:point val="40.765,26.3003"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="32.08,27.0463;41.615,32.925"/>
+        <dia:rectangle val="32.08,26.2503;41.615,32.926"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
       </dia:attribute>
       <dia:attribute name="orth_points">
-        <dia:point val="40.765,27.0963"/>
+        <dia:point val="40.765,26.3003"/>
         <dia:point val="40.765,28.5"/>
         <dia:point val="32.13,28.5"/>
-        <dia:point val="32.13,32.875"/>
+        <dia:point val="32.13,32.876"/>
       </dia:attribute>
       <dia:attribute name="orth_orient">
         <dia:enum val="1"/>
@@ -2027,8 +1986,8 @@ Si supero los 300 calculo con otra factura#</dia:string>
         <dia:string>##</dia:string>
       </dia:attribute>
       <dia:connections>
-        <dia:connection handle="0" to="O4" connection="18"/>
-        <dia:connection handle="1" to="O6" connection="16"/>
+        <dia:connection handle="0" to="O4" connection="16"/>
+        <dia:connection handle="1" to="O6" connection="18"/>
       </dia:connections>
     </dia:object>
     <dia:object type="UML - Association" version="2" id="O10">
@@ -2069,19 +2028,19 @@ Si supero los 300 calculo con otra factura#</dia:string>
         <dia:boolean val="false"/>
       </dia:attribute>
       <dia:attribute name="obj_pos">
-        <dia:point val="36.9999,24.05"/>
+        <dia:point val="36.9999,23.65"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="6.25,23.25;37.7499,24.85"/>
+        <dia:rectangle val="5.65,22.85;37.7499,25.3"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
       </dia:attribute>
       <dia:attribute name="orth_points">
-        <dia:point val="36.9999,24.05"/>
-        <dia:point val="23.5461,24.05"/>
-        <dia:point val="23.5461,24.05"/>
-        <dia:point val="6.3,24.05"/>
+        <dia:point val="36.9999,23.65"/>
+        <dia:point val="23.5461,23.65"/>
+        <dia:point val="23.5461,24.5"/>
+        <dia:point val="5.7,24.5"/>
       </dia:attribute>
       <dia:attribute name="orth_orient">
         <dia:enum val="0"/>
@@ -2098,7 +2057,7 @@ Si supero los 300 calculo con otra factura#</dia:string>
         <dia:color val="#000000"/>
       </dia:attribute>
       <dia:connections>
-        <dia:connection handle="0" to="O4" connection="18"/>
+        <dia:connection handle="0" to="O4" connection="16"/>
         <dia:connection handle="1" to="O5" connection="9"/>
       </dia:connections>
     </dia:object>
@@ -2140,22 +2099,20 @@ Si supero los 300 calculo con otra factura#</dia:string>
         <dia:boolean val="false"/>
       </dia:attribute>
       <dia:attribute name="obj_pos">
-        <dia:point val="7.29797,12.0909"/>
+        <dia:point val="-3.20485,16.2412"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="6.54797,9.25;8.23297,12.8909"/>
+        <dia:rectangle val="-9.9775,13.5;-2.45485,17.0412"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
       </dia:attribute>
       <dia:attribute name="orth_points">
-        <dia:point val="7.29797,12.0909"/>
-        <dia:point val="7.29797,10.3455"/>
-        <dia:point val="7.2725,10.3455"/>
-        <dia:point val="7.2725,9.3"/>
+        <dia:point val="-3.20485,16.2412"/>
+        <dia:point val="-9.9275,16.2412"/>
+        <dia:point val="-9.9275,13.55"/>
       </dia:attribute>
       <dia:attribute name="orth_orient">
-        <dia:enum val="1"/>
         <dia:enum val="0"/>
         <dia:enum val="1"/>
       </dia:attribute>
@@ -2184,7 +2141,7 @@ Si supero los 300 calculo con otra factura#</dia:string>
         <dia:boolean val="false"/>
       </dia:attribute>
       <dia:attribute name="assoc_type">
-        <dia:enum val="1"/>
+        <dia:enum val="0"/>
       </dia:attribute>
       <dia:attribute name="role_a">
         <dia:string>##</dia:string>
@@ -2211,19 +2168,19 @@ Si supero los 300 calculo con otra factura#</dia:string>
         <dia:boolean val="false"/>
       </dia:attribute>
       <dia:attribute name="obj_pos">
-        <dia:point val="7.2725,4.1"/>
+        <dia:point val="-9.9275,8.35"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="6.5225,1.075;48.725,11.8498"/>
+        <dia:rectangle val="-9.9775,1.075;48.725,11.85"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
       </dia:attribute>
       <dia:attribute name="orth_points">
-        <dia:point val="7.2725,4.1"/>
-        <dia:point val="7.2725,1.875"/>
+        <dia:point val="-9.9275,8.35"/>
+        <dia:point val="-9.9275,1.875"/>
         <dia:point val="48.14,1.875"/>
-        <dia:point val="48.14,11.0498"/>
+        <dia:point val="48.14,11.05"/>
       </dia:attribute>
       <dia:attribute name="orth_orient">
         <dia:enum val="1"/>
@@ -2241,7 +2198,7 @@ Si supero los 300 calculo con otra factura#</dia:string>
       </dia:attribute>
       <dia:connections>
         <dia:connection handle="0" to="O0" connection="1"/>
-        <dia:connection handle="1" to="O1" connection="18"/>
+        <dia:connection handle="1" to="O1" connection="14"/>
       </dia:connections>
     </dia:object>
     <dia:object type="UML - Association" version="2" id="O13">
@@ -2654,17 +2611,17 @@ Si supero los 300 calculo con otra factura#</dia:string>
     </dia:object>
     <dia:object type="UML - Generalization" version="1" id="O16">
       <dia:attribute name="obj_pos">
-        <dia:point val="2.2,28.2003"/>
+        <dia:point val="1.6,28.6499"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="-4.9225,28.1503;3.05,31.33"/>
+        <dia:rectangle val="-4.9225,28.5999;2.45,31.33"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
       </dia:attribute>
       <dia:attribute name="orth_points">
-        <dia:point val="2.2,28.2003"/>
-        <dia:point val="2.2,30.525"/>
+        <dia:point val="1.6,28.6499"/>
+        <dia:point val="1.6,30.525"/>
         <dia:point val="-4.8725,30.525"/>
         <dia:point val="-4.8725,31.28"/>
       </dia:attribute>
@@ -2695,17 +2652,17 @@ Si supero los 300 calculo con otra factura#</dia:string>
     </dia:object>
     <dia:object type="UML - Generalization" version="1" id="O17">
       <dia:attribute name="obj_pos">
-        <dia:point val="2.2,28.2002"/>
+        <dia:point val="1.6,28.6493"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="1.35,28.1502;9.71,31.9599"/>
+        <dia:rectangle val="0.75,28.5993;9.71,31.9599"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
       </dia:attribute>
       <dia:attribute name="orth_points">
-        <dia:point val="2.2,28.2002"/>
-        <dia:point val="2.2,30.5"/>
+        <dia:point val="1.6,28.6493"/>
+        <dia:point val="1.6,30.5"/>
         <dia:point val="9.66,30.5"/>
         <dia:point val="9.66,31.9099"/>
       </dia:attribute>
@@ -2772,17 +2729,17 @@ Si supero los 300 calculo con otra factura#</dia:string>
         <dia:boolean val="false"/>
       </dia:attribute>
       <dia:attribute name="obj_pos">
-        <dia:point val="44.5304,24.05"/>
+        <dia:point val="44.5304,23.65"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="43.7804,13;54.8461,24.85"/>
+        <dia:rectangle val="43.7804,13;54.8461,24.45"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
       </dia:attribute>
       <dia:attribute name="orth_points">
-        <dia:point val="44.5304,24.05"/>
-        <dia:point val="54.7461,24.05"/>
+        <dia:point val="44.5304,23.65"/>
+        <dia:point val="54.7461,23.65"/>
         <dia:point val="54.7461,13.8"/>
         <dia:point val="53.78,13.8"/>
       </dia:attribute>
@@ -2801,7 +2758,7 @@ Si supero los 300 calculo con otra factura#</dia:string>
         <dia:color val="#000000"/>
       </dia:attribute>
       <dia:connections>
-        <dia:connection handle="0" to="O4" connection="18"/>
+        <dia:connection handle="0" to="O4" connection="16"/>
         <dia:connection handle="1" to="O1" connection="11"/>
       </dia:connections>
     </dia:object>
@@ -3486,7 +3443,7 @@ Si supero los 300 calculo con otra factura#</dia:string>
         <dia:point val="18.9301,39.43"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="18.1801,34.625;24.9504,40.23"/>
+        <dia:rectangle val="18.1801,35.025;24.9504,40.23"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
@@ -3494,8 +3451,8 @@ Si supero los 300 calculo con otra factura#</dia:string>
       <dia:attribute name="orth_points">
         <dia:point val="18.9301,39.43"/>
         <dia:point val="22,39.43"/>
-        <dia:point val="22,35.425"/>
-        <dia:point val="24.9004,35.425"/>
+        <dia:point val="22,35.825"/>
+        <dia:point val="24.9004,35.825"/>
       </dia:attribute>
       <dia:attribute name="orth_orient">
         <dia:enum val="0"/>
@@ -3513,7 +3470,7 @@ Si supero los 300 calculo con otra factura#</dia:string>
       </dia:attribute>
       <dia:connections>
         <dia:connection handle="0" to="O22" connection="18"/>
-        <dia:connection handle="1" to="O6" connection="16"/>
+        <dia:connection handle="1" to="O6" connection="18"/>
       </dia:connections>
     </dia:object>
     <dia:object type="Standard - Text" version="1" id="O25">
