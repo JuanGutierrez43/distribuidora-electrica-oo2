@@ -1939,7 +1939,7 @@ devuelve el consumo#</dia:string>
       <dia:attribute name="orth_points">
         <dia:point val="7.29442,25.7998"/>
         <dia:point val="7.29442,30.2187"/>
-        <dia:point val="0.852211,30.2187"/>
+        <dia:point val="0.85221,30.2187"/>
         <dia:point val="0.85221,33.4885"/>
       </dia:attribute>
       <dia:attribute name="orth_orient">
@@ -2811,13 +2811,13 @@ devuelve el consumo#</dia:string>
         <dia:point val="27.8449,15.1879"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="27.7949,15.1379;34.5549,19.6379"/>
+        <dia:rectangle val="27.7949,15.1379;35.3249,19.6379"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
         <dia:point val="27.8449,15.1879"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
-        <dia:real val="6.6600000000000001"/>
+        <dia:real val="7.4299999999999997"/>
       </dia:attribute>
       <dia:attribute name="elem_height">
         <dia:real val="4.4000000000000004"/>
@@ -2938,7 +2938,7 @@ devuelve el consumo#</dia:string>
             <dia:string>#cargoFijo#</dia:string>
           </dia:attribute>
           <dia:attribute name="type">
-            <dia:string>##</dia:string>
+            <dia:string>#double#</dia:string>
           </dia:attribute>
           <dia:attribute name="value">
             <dia:string>##</dia:string>
@@ -3027,7 +3027,7 @@ devuelve el consumo#</dia:string>
         <dia:point val="13.8941,13.1494"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="13.1441,12.3494;27.8445,18.1879"/>
+        <dia:rectangle val="13.1441,12.3494;27.8444,18.1879"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
@@ -3036,7 +3036,7 @@ devuelve el consumo#</dia:string>
         <dia:point val="13.8941,13.1494"/>
         <dia:point val="21.1943,13.1494"/>
         <dia:point val="21.1943,17.3879"/>
-        <dia:point val="27.7945,17.3879"/>
+        <dia:point val="27.7944,17.3879"/>
       </dia:attribute>
       <dia:attribute name="orth_orient">
         <dia:enum val="0"/>
@@ -3373,17 +3373,17 @@ devuelve el consumo#</dia:string>
     </dia:object>
     <dia:object type="UML - Generalization" version="1" id="O24">
       <dia:attribute name="obj_pos">
-        <dia:point val="31.1749,19.6382"/>
+        <dia:point val="31.5599,19.6382"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="26.2528,19.5882;32.0249,22.4817"/>
+        <dia:rectangle val="26.2528,19.5882;32.4099,22.4817"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
       </dia:attribute>
       <dia:attribute name="orth_points">
-        <dia:point val="31.1749,19.6382"/>
-        <dia:point val="31.1749,21.435"/>
+        <dia:point val="31.5599,19.6382"/>
+        <dia:point val="31.5599,21.435"/>
         <dia:point val="26.3028,21.435"/>
         <dia:point val="26.3028,22.4317"/>
       </dia:attribute>
@@ -3414,17 +3414,17 @@ devuelve el consumo#</dia:string>
     </dia:object>
     <dia:object type="UML - Generalization" version="1" id="O25">
       <dia:attribute name="obj_pos">
-        <dia:point val="31.1749,19.6382"/>
+        <dia:point val="31.5599,19.6382"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="30.3249,19.5882;36.7602,22.4862"/>
+        <dia:rectangle val="30.7099,19.5882;36.7602,22.4862"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
       </dia:attribute>
       <dia:attribute name="orth_points">
-        <dia:point val="31.1749,19.6382"/>
-        <dia:point val="31.1749,21.4372"/>
+        <dia:point val="31.5599,19.6382"/>
+        <dia:point val="31.5599,21.4372"/>
         <dia:point val="36.7102,21.4372"/>
         <dia:point val="36.7102,22.4362"/>
       </dia:attribute>
