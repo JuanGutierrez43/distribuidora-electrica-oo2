@@ -6,12 +6,14 @@ public class Medidor {
 	private int nroSerie;
 	private String domicilioMedidor;
 	private boolean esBaja;
+	private Zona zona;
 	
-	public Medidor(Cliente cliente, int nroSerie, String domicilioMedidor, boolean esBaja) {
+	public Medidor(Cliente cliente, int nroSerie, String domicilioMedidor, boolean esBaja, Zona zona) {
 		this.cliente = cliente;
 		this.nroSerie = nroSerie;
 		this.domicilioMedidor = domicilioMedidor;
 		this.esBaja = esBaja;
+		this.zona=zona;
 	}
 
 	public long getIdMedidor() {
@@ -54,9 +56,20 @@ public class Medidor {
 		this.esBaja = esBaja;
 	}
 
+	public Zona getZona() {
+		return zona;
+	}
+
+	public void setZona(Zona zona) {
+		this.zona = zona;
+	}
+
 	@Override
 	public String toString() {
 		return "Medidor [idMedidor=" + idMedidor + ", cliente=" + cliente + ", nroSerie=" + nroSerie
-				+ ", domicilioMedidor=" + domicilioMedidor + ", esBaja=" + esBaja + "]";
+				+ ", domicilioMedidor=" + domicilioMedidor + ", esBaja=" + esBaja + ", zona=" + zona + "]";
 	}
+
+	
+	
 }

@@ -6,11 +6,13 @@ public class Lectura {
 	private long idLectura;
 	private LocalDate fecha;
 	private Inspector inspector;
+	private Medidor medidor;
 	
-	public Lectura(LocalDate fecha, Inspector inspector) {
+	public Lectura(LocalDate fecha, Inspector inspector,Medidor medidor) {
 		super();
 		this.fecha = fecha;
 		this.inspector = inspector;
+		this.setMedidor(medidor);
 	}
 
 	public long getIdLectura() {
@@ -37,8 +39,19 @@ public class Lectura {
 		this.inspector = inspector;
 	}
 
+	public Medidor getMedidor() {
+		return medidor;
+	}
+
+	public void setMedidor(Medidor medidor) {
+		this.medidor = medidor;
+	}
+
 	@Override
 	public String toString() {
-		return "Lectura [idLectura=" + idLectura + ", fecha=" + fecha + ", inspector=" + inspector + "]";
+		return "Lectura [idLectura=" + idLectura + ", fecha=" + fecha + ", inspector=" + inspector + ", medidor="
+				+ medidor + "]";
 	}
+	
+	
 }
