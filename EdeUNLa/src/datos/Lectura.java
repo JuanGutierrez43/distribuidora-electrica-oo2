@@ -8,11 +8,14 @@ public class Lectura {
 	private Inspector inspector;
 	private Medidor medidor;
 	
+	public Lectura() {
+	}
+	
 	public Lectura(LocalDate fecha, Inspector inspector,Medidor medidor) {
 		super();
 		this.fecha = fecha;
 		this.inspector = inspector;
-		this.setMedidor(medidor);
+		this.medidor= medidor;
 	}
 
 	public long getIdLectura() {

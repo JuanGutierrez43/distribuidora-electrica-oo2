@@ -5,6 +5,10 @@ public class Zona {
 	private int idZona;
 	private String descripcion;
 	
+	public Zona() {
+		
+	}
+	
 	public Zona(String descripcion) {
 		super();
 		this.descripcion = descripcion;

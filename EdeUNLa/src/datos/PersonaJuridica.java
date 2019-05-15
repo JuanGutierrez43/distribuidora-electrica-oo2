@@ -5,6 +5,10 @@ public class PersonaJuridica extends Cliente {
 	private String cuit;
 	private String razonSocial;
 	
+	public PersonaJuridica() {
+		
+	}
+	
 	public PersonaJuridica(String direccion, String email, long telefonoFijo, long telefonoMovil,
 			String cuit, String razonSocial) {
 		super(direccion, email, telefonoFijo, telefonoMovil);

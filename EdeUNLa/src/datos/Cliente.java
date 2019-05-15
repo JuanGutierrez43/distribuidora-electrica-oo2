@@ -8,6 +8,10 @@ public class Cliente {
 	private long telefonoFijo;
 	private long telefonoMovil;
 	
+	public Cliente() {
+		
+	}
+	
 	public Cliente(String direccion, String email, long telefonoFijo, long telefonoMovil) {
 		super();
 		this.direccion = direccion;

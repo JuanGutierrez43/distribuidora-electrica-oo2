@@ -11,6 +11,11 @@ public class Inspector {
 	private long dni;
 	private long telefonoMovil;
 	
+	
+	public Inspector() {
+		
+	}
+	
 	public Inspector(Set<Zona> lstZona, String nombre, String apellido, long dni, long telefonoMovil) {
 		super();
 		this.lstZona = lstZona;

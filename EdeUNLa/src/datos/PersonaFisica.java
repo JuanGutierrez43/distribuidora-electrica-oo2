@@ -6,6 +6,9 @@ public class PersonaFisica extends Cliente{
 	private String nombre;
 	private String apellido;
 
+	public PersonaFisica() {
+		
+	}
 	
 	public PersonaFisica(String direccion, String email, long telefonoFijo, long telefonoMovil, long dni, String nombre, String apellido) {
 		super(direccion, email, telefonoFijo, telefonoMovil);

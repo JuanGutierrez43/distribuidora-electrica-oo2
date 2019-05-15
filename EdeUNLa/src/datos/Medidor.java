@@ -8,6 +8,11 @@ public class Medidor {
 	private boolean esBaja;
 	private Zona zona;
 	
+	
+	public Medidor() {
+		
+	}
+	
 	public Medidor(Cliente cliente, int nroSerie, String domicilioMedidor, boolean esBaja, Zona zona) {
 		this.cliente = cliente;
 		this.nroSerie = nroSerie;
