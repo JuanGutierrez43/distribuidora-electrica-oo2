@@ -10,6 +10,7 @@ public class ItemFactura {
 	private int nroMedidor;
 	private Tarifa tarifa;
 	private Lectura lectura;
+	private Factura factura;
 
 	public ItemFactura() {
 	}
@@ -90,6 +91,14 @@ public class ItemFactura {
 		this.lectura = lectura;
 	}
 
+	public Factura getFactura() {
+		return factura;
+	}
+
+	public void setFactura(Factura factura) {
+		this.factura = factura;
+	}
+
 	// métodos
 	public double calcularSubTotal() {
 		return 0;
@@ -99,7 +108,8 @@ public class ItemFactura {
 	public String toString() {
 		return "ItemFactura [idItemFactura=" + idItemFactura + ", detalle=" + detalle + ", precioUnitario="
 				+ precioUnitario + ", cantidad=" + cantidad + ", unidad=" + unidad + ", nroMedidor=" + nroMedidor
-				+ ", tarifa=" + tarifa + ", lectura=" + lectura + "]";
+				+ ", tarifa=" + tarifa + ", lectura=" + lectura + ", factura=" + factura + "]";
 	}
+
 
 }

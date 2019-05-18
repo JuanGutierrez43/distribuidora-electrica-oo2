@@ -1,7 +1,9 @@
 package datos;
 
 public class DetalleBaja {
-
+	
+	private int idDetalleBaja;
+	private TarifaBaja tafifaBaja;
 	private String detalleConcepto;
 	private String unidad;
 	private int desde;
@@ -19,7 +21,23 @@ public class DetalleBaja {
 		this.hasta = hasta;
 		this.valor = valor;
 	}
+	
+	public int getIdDetalleBaja() {
+		return idDetalleBaja;
+	}
 
+	protected void setIdDetalleBaja(int idDetalleBaja) {
+		this.idDetalleBaja = idDetalleBaja;
+	}
+
+	public TarifaBaja getTafifaBaja() {
+		return tafifaBaja;
+	}
+
+	public void setTafifaBaja(TarifaBaja tafifaBaja) {
+		this.tafifaBaja = tafifaBaja;
+	}
+	
 	public String getDetalleConcepto() {
 		return detalleConcepto;
 	}
@@ -59,11 +77,14 @@ public class DetalleBaja {
 	public void setValor(double valor) {
 		this.valor = valor;
 	}
-
+	
 	@Override
 	public String toString() {
-		return "DetalleBaja [detalleConcepto=" + detalleConcepto + ", unidad=" + unidad + ", desde=" + desde
-				+ ", hasta=" + hasta + ", valor=" + valor + "]";
+		return "DetalleBaja [idDetalleBaja=" + idDetalleBaja + ", tafifaBaja=" + tafifaBaja + ", detalleConcepto="
+				+ detalleConcepto + ", unidad=" + unidad + ", desde=" + desde + ", hasta=" + hasta + ", valor=" + valor
+				+ "]";
 	}
+
+
 
 }

@@ -1,1 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+<class name = "datos.Factura" table = "factura">
+<id column = "idFactura" name = "idFactura">
+<generator class = "identity"/>
+</id>
+
+<property name = "datosCliente" column = "datosCliente" type = "string"/>
+<property name = "fecha" column = "fecha" type = "LocalDate"/>
+<property name = "observaciones" column = "observaciones" type = "string"/>
+
+<set name = "lstItem" table = "itemfactura" order-by = "idItemFactura asc" inverse = "true" lazy = "true" fetch = "select">
+<key column = "idFactura" not-null = "true"/>
+<one-to-many class = "datos.ItemFactura"/>
+</set>
+
+</class>
+</hibernate-mapping>

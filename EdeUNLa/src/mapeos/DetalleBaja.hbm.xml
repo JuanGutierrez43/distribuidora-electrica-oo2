@@ -1,1 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+<class name = "datos.DetalleBaja" table = "detallebaja">
+<id column = "idDetalleBaja" name = "idDetalleBaja">
+<generator class = "identity"/>
+</id>
+
+<many-to-one name = "tafifaBaja" class = "datos.TarifaBaja" column = "idTarifaBaja" not-null = "true"/>
+
+<property name = "detalleConcepto" column = "detalleConcepto" type = "string"/>
+<property name = "unidad" column = "unidad" type = "string"/>
+<property name = "desde" column = "desde" type = "int"/>
+<property name = "hasta" column = "hasta" type = "int"/>
+<property name = "valor" column = "valor" type = "double"/>
+
+</class>
+</hibernate-mapping>

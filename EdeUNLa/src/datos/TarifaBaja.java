@@ -4,28 +4,28 @@ import java.util.Set;
 
 public class TarifaBaja extends Tarifa {
 
-	private Set<DetalleBaja> listDetalle;
+	private Set<DetalleBaja> lstDetalle;
 
 	public TarifaBaja() {
 	}
 
-	public TarifaBaja(String servicio, Set<DetalleBaja> listDetalle) {
-		super(servicio);
-		this.listDetalle = listDetalle;
+	public TarifaBaja(Set<DetalleBaja> lstDetalle) {
+		super();
+		this.lstDetalle = lstDetalle;
 	}
 
-	public Set<DetalleBaja> getListDetalle() {
-		return listDetalle;
+	public Set<DetalleBaja> getLstDetalle() {
+		return lstDetalle;
 	}
 
-	public void setListDetalle(Set<DetalleBaja> listDetalle) {
-		this.listDetalle = listDetalle;
+	public void setLstDetalle(Set<DetalleBaja> lstDetalle) {
+		this.lstDetalle = lstDetalle;
 	}
 
 	@Override
 	public String toString() {
-		return "TarifaBaja [listDetalle=" + listDetalle + ", getIdTarifa()=" + getIdTarifa() + ", getServicio()="
-				+ getServicio() + "]";
+		return "TarifaBaja [lstDetalle=" + lstDetalle + "]";
 	}
 
+	
 }

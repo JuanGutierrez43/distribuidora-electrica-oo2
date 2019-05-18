@@ -1,1 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+<class name = "datos.Medidor" table = "medidor">
+<id column = "idMedidor" name = "idMedidor">
+<generator class = "identity"/>
+</id>
+
+<many-to-one name = "cliente" class = "datos.Cliente" column = "idCliente" not-null = "true"/>
+
+<property name = "nroSerie" column = "nroSerie" type = "int"/>
+<property name = "domicilioMedidor" column = "domicilioMedidor" type = "string"/>
+<property name = "esBaja" column = "esBaja" type = "boolean"/>
+
+<many-to-one name = "zona" class = "datos.Zona" column = "idZona" not-null = "true"/>
+
+
+</class>
+</hibernate-mapping>

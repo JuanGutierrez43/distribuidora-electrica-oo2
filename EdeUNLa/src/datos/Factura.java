@@ -9,19 +9,16 @@ public class Factura {
 	private LocalDate fecha;
 	private String observaciones;
 	private Set<ItemFactura> lstItem;
-	private Cliente cliente;
 
 	public Factura() {
 	}
 
-	public Factura(String datosCliente, LocalDate fecha, String observaciones, Set<ItemFactura> lstItem,
-			Cliente cliente) {
+	public Factura(String datosCliente, LocalDate fecha, String observaciones, Set<ItemFactura> lstItem) {
 		super();
 		this.datosCliente = datosCliente;
 		this.fecha = fecha;
 		this.observaciones = observaciones;
 		this.lstItem = lstItem;
-		this.cliente = cliente;
 	}
 
 	public int getIdFactura() {
@@ -64,14 +61,6 @@ public class Factura {
 		this.lstItem = lstItem;
 	}
 
-	public Cliente getCliente() {
-		return cliente;
-	}
-
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
-	}
-
 	// Métodos
 	
 	public double calcularTotal() {
@@ -81,11 +70,11 @@ public class Factura {
 	public LocalDate calcularFVto() {
 		return null;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "Factura [idFactura=" + idFactura + ", datosCliente=" + datosCliente + ", fecha=" + fecha
-				+ ", observaciones=" + observaciones + ", lstItem=" + lstItem + ", cliente=" + cliente + "]";
+				+ ", observaciones=" + observaciones + ", lstItem=" + lstItem + "]";
 	}
-
+	
 }

@@ -1,1 +1,36 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+<class name = "datos.Tarifa" table = "tarifa">
+<id column = "idTarifa" name = "idTarifa">
+<generator class = "identity"/>
+</id>
+<property name = "servicio" column = "servicio" type = "string"/>
+
+
+<joined-subclass name = "datos.TarifaAlta" table = "tarifaalta">
+<key column = "idTarifaAlta"/>
+<property column = "tensionContratada" name = "tensionContratada" type = "string"/>
+<property column = "limite" name = "limite" type = "int"/>
+
+<set name = "lstDetalle" table = "detallealta" order-by = "idDetalleAlta asc" inverse = "true" lazy = "true" fetch = "select">
+<key column = "idTarifa" not-null = "true"/>
+<one-to-many class = "datos.DetalleAlta"/>
+</set>
+
+</joined-subclass>
+
+<joined-subclass name = "datos.TarifaBaja" table = "tarifabaja">
+<key column = "idTarifaBaja"/>
+
+<set name = "lstDetalle" table = "detallebaja" order-by = "idDetalleBaja asc" inverse = "true" lazy = "true" fetch = "select">
+<key column = "idTarifa" not-null = "true"/>
+<one-to-many class = "datos.DetalleBaja"/>
+</set>
+
+</joined-subclass>
+
+</class>
+</hibernate-mapping>

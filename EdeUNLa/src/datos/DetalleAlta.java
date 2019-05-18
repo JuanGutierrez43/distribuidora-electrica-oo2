@@ -1,7 +1,9 @@
 package datos;
 
 public class DetalleAlta {
-
+	
+	private int idDetalleAlta;
+	private TarifaAlta tarifaAlta;
 	private String detalleConcepto;
 	private String unidad;
 	private boolean superarLimite;
@@ -16,6 +18,24 @@ public class DetalleAlta {
 		this.unidad = unidad;
 		this.superarLimite = superarLimite;
 		this.valor = valor;
+	}
+	
+	
+	
+	public int getIdDetalleAlta() {
+		return idDetalleAlta;
+	}
+
+	protected void setIdDetalleAlta(int idDetalleAlta) {
+		this.idDetalleAlta = idDetalleAlta;
+	}
+
+	public TarifaAlta getTarifaAlta() {
+		return tarifaAlta;
+	}
+
+	public void setTarifaAlta(TarifaAlta tarifaAlta) {
+		this.tarifaAlta = tarifaAlta;
 	}
 
 	public String getDetalleConcepto() {
@@ -52,8 +72,11 @@ public class DetalleAlta {
 
 	@Override
 	public String toString() {
-		return "DetalleAlta [detalleConcepto=" + detalleConcepto + ", unidad=" + unidad + ", superarLimite="
-				+ superarLimite + ", valor=" + valor + "]";
+		return "DetalleAlta [idDetalleAlta=" + idDetalleAlta + ", tarifaAlta=" + tarifaAlta + ", detalleConcepto="
+				+ detalleConcepto + ", unidad=" + unidad + ", superarLimite=" + superarLimite + ", valor=" + valor
+				+ "]";
 	}
+
+	
 
 }

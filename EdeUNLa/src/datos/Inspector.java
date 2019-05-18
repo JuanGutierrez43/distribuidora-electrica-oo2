@@ -5,7 +5,7 @@ import java.util.Set;
 public class Inspector {
 		
 	private int idInspector;
-	private Set<Zona> lstZona;
+	private Set<Zona> zonas;
 	private String nombre;
 	private String apellido;
 	private long dni;
@@ -16,9 +16,8 @@ public class Inspector {
 		
 	}
 	
-	public Inspector(Set<Zona> lstZona, String nombre, String apellido, long dni, long telefonoMovil) {
+	public Inspector(String nombre, String apellido, long dni, long telefonoMovil) {
 		super();
-		this.lstZona = lstZona;
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.dni = dni;
@@ -33,12 +32,12 @@ public class Inspector {
 		this.idInspector = idInspector;
 	}
 
-	public Set<Zona> getLstZona() {
-		return lstZona;
+	public Set<Zona> getZonas() {
+		return zonas;
 	}
 
-	public void setLstZona(Set<Zona> lstZona) {
-		this.lstZona = lstZona;
+	public void setZonas(Set<Zona> zonas) {
+		this.zonas = zonas;
 	}
 
 	public String getNombre() {
@@ -75,9 +74,11 @@ public class Inspector {
 
 	@Override
 	public String toString() {
-		return "Inspector [idInspector=" + idInspector + ", nombre=" + nombre + ", apellido=" + apellido + ", dni="
-				+ dni + ", telefonoMovil=" + telefonoMovil + "]";
+		return "Inspector [idInspector=" + idInspector + ", zonas=" + zonas + ", nombre=" + nombre + ", apellido="
+				+ apellido + ", dni=" + dni + ", telefonoMovil=" + telefonoMovil + "]";
 	}
+
+
 	
 	
 	

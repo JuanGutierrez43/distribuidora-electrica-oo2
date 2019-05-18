@@ -1,1 +1,24 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+<class name = "datos.ItemFactura" table = "itemfactura">
+<id column = "idItemFactura" name = "idItemFactura">
+<generator class = "identity"/>
+</id>
+
+<property name = "detalle" column = "detalle" type = "string"/>
+<property name = "precioUnitario" column = "precioUnitario" type = "double"/>
+<property name = "cantidad" column = "cantidad" type = "int"/>
+<property name = "unidad" column = "unidad" type = "string"/>
+<property name = "nroMedidor" column = "nroMedidor" type = "int"/>
+
+<one-to-one name = "tarifa" class = "datos.Tarifa" ></one-to-one>
+<one-to-one name = "lectura" class = "datos.Lectura" ></one-to-one>
+
+<many-to-one name = "factura" class = "datos.Factura" column = "idFactura" not-null = "true"/>
+
+
+</class>
+</hibernate-mapping>

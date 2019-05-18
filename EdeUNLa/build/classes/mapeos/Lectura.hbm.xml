@@ -1,1 +1,30 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+<class name = "datos.Lectura" table = "lectura">
+<id column = "idLectura" name = "idLectura">
+<generator class = "identity"/>
+</id>
+
+<many-to-one name = "inspector" class = "datos.Inspector" column = "idInspector" not-null = "true"/>
+
+<property name = "fecha" column = "fecha" type = "LocalDate"/>
+
+<many-to-one name = "medidor" class = "datos.Medidor" column = "idMedidor" not-null = "true"/>
+
+<joined-subclass name = "datos.AltaDemanda" table = "altademanda">
+<key column = "idAltaDemanda"/>
+<property column = "consumoHorasValle" name = "consumoHorasValle" type = "int"/>
+<property column = "consumoHoraPico" name = "consumoHoraPico" type = "int"/>
+<property column = "consumoHorasResto" name = "consumoHorasResto" type = "int"/>
+</joined-subclass>
+
+<joined-subclass name = "datos.BajaDemanda" table = "bajademanda">
+<key column = "idBajaDemanda"/>
+<property column = "consumo" name = "consumo" type = "int"/>
+</joined-subclass>
+
+</class>
+</hibernate-mapping>

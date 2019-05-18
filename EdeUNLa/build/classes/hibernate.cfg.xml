@@ -4,7 +4,7 @@
 <hibernate-configuration>
   <session-factory>
      <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-     <property name="connection.url">jdbc:mysql://localhost/bd-hibernate-herencia</property>
+     <property name="connection.url">jdbc:mysql://localhost/bd-hibernate-edeunla</property>
      <property name="connection.username">root</property>
      <property name="connection.password">root</property>
      <property name="connection.pool_size">1</property>
@@ -12,5 +12,14 @@
      <property name="show_sql">true</property> <!-- en true muestra hql en consola -->
      <!-- Mapeo Entidades -->
      <mapping resource="mapeos/Cliente.hbm.xml"/>
+     <mapping resource="mapeos/Lectura.hbm.xml"/>
+     <mapping resource="mapeos/Inspector.hbm.xml"/>
+     <mapping resource="mapeos/Zona.hbm.xml"/>
+     <mapping resource="mapeos/Medidor.hbm.xml"/>
+     <mapping resource="mapeos/DetalleAlta.hbm.xml"/>
+     <mapping resource="mapeos/DetalleBaja.hbm.xml"/>
+     <mapping resource="mapeos/Tarifa.hbm.xml"/>
+     <mapping resource="mapeos/ItemFactura.hbm.xml"/>
+     <mapping resource="mapeos/Factura.hbm.xml"/>    
   </session-factory>
 </hibernate-configuration>

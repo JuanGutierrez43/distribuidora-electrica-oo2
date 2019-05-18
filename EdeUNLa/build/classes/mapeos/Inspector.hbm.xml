@@ -1,1 +1,24 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+<class name = "datos.Inspector" table = "inspector">
+<id column = "idInspector" name = "idInspector">
+<generator class = "identity"/>
+</id>
+
+<set table = "inspectorxzona" name = "zonas" outer-join = "true">
+<key column = "idInspector"/>
+<many-to-many column = "idZona" class = "datos.Zona"/>
+</set>
+
+<property name = "nombre" column = "nombre" type = "string"/>
+<property name = "apellido" column = "apellido" type = "string"/>
+<property name = "dni" column = "dni" type = "long"/>
+<property name = "telefonoMovil" column = "telefonoMovil" type = "long"/>
+
+
+
+</class>
+</hibernate-mapping>

@@ -6,16 +6,16 @@ public class TarifaAlta extends Tarifa {
 
 	private String tensionContratada;
 	private int limite;
-	private Set<DetalleAlta> listDetalle;
+	private Set<DetalleAlta> lstDetalle;
 
 	public TarifaAlta() {
 	}
 
-	public TarifaAlta(String servicio, String tensionContratada, int limite, Set<DetalleAlta> listDetalle) {
-		super(servicio);
+	public TarifaAlta(String tensionContratada, int limite, Set<DetalleAlta> lstDetalle) {
+		super();
 		this.tensionContratada = tensionContratada;
 		this.limite = limite;
-		this.listDetalle = listDetalle;
+		this.lstDetalle = lstDetalle;
 	}
 
 	public String getTensionContratada() {
@@ -34,18 +34,19 @@ public class TarifaAlta extends Tarifa {
 		this.limite = limite;
 	}
 
-	public Set<DetalleAlta> getListDetalle() {
-		return listDetalle;
+	public Set<DetalleAlta> getLstDetalle() {
+		return lstDetalle;
 	}
 
-	public void setListDetalle(Set<DetalleAlta> listDetalle) {
-		this.listDetalle = listDetalle;
+	public void setLstDetalle(Set<DetalleAlta> lstDetalle) {
+		this.lstDetalle = lstDetalle;
 	}
 
 	@Override
 	public String toString() {
-		return "TarifaAlta [tensionContratada=" + tensionContratada + ", limite=" + limite + ", getIdTarifa()="
-				+ getIdTarifa() + ", getServicio()=" + getServicio() + "]";
+		return "TarifaAlta [tensionContratada=" + tensionContratada + ", limite=" + limite + ", lstDetalle="
+				+ lstDetalle + "]";
 	}
 
+	
 }

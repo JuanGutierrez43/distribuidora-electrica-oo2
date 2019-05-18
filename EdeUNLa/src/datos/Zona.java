@@ -1,9 +1,12 @@
 package datos;
 
+import java.util.Set;
+
 public class Zona {
 	
 	private int idZona;
 	private String descripcion;
+	private Set<Inspector> inspectores;
 	
 	public Zona() {
 		
@@ -30,10 +33,19 @@ public class Zona {
 		this.descripcion = descripcion;
 	}
 
+	public Set<Inspector> getInspectores() {
+		return inspectores;
+	}
+
+	public void setInspectores(Set<Inspector> inspectores) {
+		this.inspectores = inspectores;
+	}
+
 	@Override
 	public String toString() {
-		return "Zona [idZona=" + idZona + ", descripcion=" + descripcion + "]";
+		return "Zona [idZona=" + idZona + ", descripcion=" + descripcion + ", inspectores=" + inspectores + "]";
 	}
+	
 	
 	
 	
