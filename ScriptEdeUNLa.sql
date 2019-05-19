@@ -115,6 +115,7 @@ CREATE TABLE IF NOT EXISTS `bd-hibernate-edeunla`.`cliente` (
   `telefonoMovil` INT(11) NOT NULL,
   PRIMARY KEY (`idCliente`))
 ENGINE = InnoDB
+AUTO_INCREMENT = 3
 DEFAULT CHARACTER SET = latin1;
 
 
@@ -221,7 +222,7 @@ DEFAULT CHARACTER SET = latin1;
 -- Table `bd-hibernate-edeunla`.`zona`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `bd-hibernate-edeunla`.`zona` (
-  `idZona` INT(11) NOT NULL,
+  `idZona` INT(11) NOT NULL AUTO_INCREMENT,
   `descripcion` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idZona`))
 ENGINE = InnoDB
