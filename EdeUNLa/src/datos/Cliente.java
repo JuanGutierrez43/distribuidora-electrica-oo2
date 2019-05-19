@@ -65,10 +65,4 @@ public class Cliente {
 		return "Cliente [idCliente=" + idCliente + ", direccion=" + direccion + ", email=" + email + ", telefonoFijo="
 				+ telefonoFijo + ", telefonoMovil=" + telefonoMovil + "]";
 	}
-	
-	
-	
-	
-	
-	
 }
