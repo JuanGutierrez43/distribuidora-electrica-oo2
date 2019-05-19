@@ -5,7 +5,7 @@ import java.time.LocalDate;
 public class AltaDemanda extends Lectura {
 
 	private int consumoHorasValle;
-	private int consumoHoraPico;
+	private int consumoHorasPico;
 	private int consumoHorasResto;
 
 	public AltaDemanda() {
@@ -15,7 +15,7 @@ public class AltaDemanda extends Lectura {
 			int consumoHoraPico, int consumoHorasResto) {
 		super(fecha, inspector, medidor);
 		this.consumoHorasValle = consumoHorasValle;
-		this.consumoHoraPico = consumoHoraPico;
+		this.consumoHorasPico = consumoHoraPico;
 		this.consumoHorasResto = consumoHorasResto;
 	}
 
@@ -27,12 +27,12 @@ public class AltaDemanda extends Lectura {
 		this.consumoHorasValle = consumoHorasValle;
 	}
 
-	public int getConsumoHoraPico() {
-		return consumoHoraPico;
+	public int getConsumoHorasPico() {
+		return consumoHorasPico;
 	}
 
-	public void setConsumoHoraPico(int consumoHoraPico) {
-		this.consumoHoraPico = consumoHoraPico;
+	public void setConsumoHorasPico(int consumoHorasPico) {
+		this.consumoHorasPico = consumoHorasPico;
 	}
 
 	public int getConsumoHorasResto() {
@@ -45,7 +45,7 @@ public class AltaDemanda extends Lectura {
 
 	@Override
 	public String toString() {
-		return "AltaDemanda [consumoHorasValle=" + consumoHorasValle + ", consumoHoraPico=" + consumoHoraPico
+		return "AltaDemanda [consumoHorasValle=" + consumoHorasValle + ", consumoHorasPico=" + consumoHorasPico
 				+ ", consumoHorasResto=" + consumoHorasResto + ", getIdLectura()=" + getIdLectura() + ", getFecha()="
 				+ getFecha() + ", getInspector()=" + getInspector() + ", getMedidor()=" + getMedidor() + "]";
 	}

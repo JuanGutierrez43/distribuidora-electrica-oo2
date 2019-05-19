@@ -17,7 +17,7 @@
 <joined-subclass name = "datos.AltaDemanda" table = "altademanda">
 <key column = "idAltaDemanda"/>
 <property column = "consumoHorasValle" name = "consumoHorasValle" type = "int"/>
-<property column = "consumoHoraPico" name = "consumoHoraPico" type = "int"/>
+<property column = "consumoHorasPico" name = "consumoHorasPico" type = "int"/>
 <property column = "consumoHorasResto" name = "consumoHorasResto" type = "int"/>
 </joined-subclass>
 
