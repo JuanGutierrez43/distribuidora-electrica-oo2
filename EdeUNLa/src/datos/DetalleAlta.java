@@ -2,7 +2,7 @@ package datos;
 
 public class DetalleAlta {
 	
-	private int idDetalleAlta;
+	private long idDetalleAlta;
 	private TarifaAlta tarifaAlta;
 	private String detalleConcepto;
 	private String unidad;
@@ -22,11 +22,11 @@ public class DetalleAlta {
 	
 	
 	
-	public int getIdDetalleAlta() {
+	public long getIdDetalleAlta() {
 		return idDetalleAlta;
 	}
 
-	protected void setIdDetalleAlta(int idDetalleAlta) {
+	protected void setIdDetalleAlta(long idDetalleAlta) {
 		this.idDetalleAlta = idDetalleAlta;
 	}
 

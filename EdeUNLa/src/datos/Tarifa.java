@@ -2,7 +2,7 @@ package datos;
 
 public class Tarifa {
 
-	private int idTarifa;
+	private long idTarifa;
 	private String servicio;
 
 	public Tarifa() {
@@ -13,11 +13,11 @@ public class Tarifa {
 		this.servicio = servicio;
 	}
 
-	public int getIdTarifa() {
+	public long getIdTarifa() {
 		return idTarifa;
 	}
 
-	protected void setIdTarifa(int idTarifa) {
+	protected void setIdTarifa(long idTarifa) {
 		this.idTarifa = idTarifa;
 	}
 

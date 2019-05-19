@@ -13,11 +13,11 @@ public class Medidor {
 		
 	}
 	
-	public Medidor(Cliente cliente, int nroSerie, String domicilioMedidor, boolean esBaja, Zona zona) {
+	public Medidor(Cliente cliente, int nroSerie, String domicilioMedidor, Zona zona) {
 		this.cliente = cliente;
 		this.nroSerie = nroSerie;
 		this.domicilioMedidor = domicilioMedidor;
-		this.esBaja = esBaja;
+		this.esBaja = false;
 		this.zona=zona;
 	}
 

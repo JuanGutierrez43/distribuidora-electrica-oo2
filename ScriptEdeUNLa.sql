@@ -14,6 +14,7 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 -- -----------------------------------------------------
 -- Schema bd-hibernate-edeunla
 -- -----------------------------------------------------
+DROP SCHEMA IF EXISTS `bd-hibernate-edeunla` ;
 CREATE SCHEMA IF NOT EXISTS `bd-hibernate-edeunla` DEFAULT CHARACTER SET latin1 ;
 USE `bd-hibernate-edeunla` ;
 
@@ -26,6 +27,7 @@ CREATE TABLE IF NOT EXISTS `bd-hibernate-edeunla`.`medidor` (
   `nroSerie` INT(11) NOT NULL,
   `domicilioMedidor` VARCHAR(45) NOT NULL,
   `esBaja` BIT(1) NULL DEFAULT b'0',
+  `idZona` INT(11) NOT NULL,
   PRIMARY KEY (`idMedidor`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = latin1;
@@ -226,6 +228,7 @@ CREATE TABLE IF NOT EXISTS `bd-hibernate-edeunla`.`zona` (
   `descripcion` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idZona`))
 ENGINE = InnoDB
+AUTO_INCREMENT = 2
 DEFAULT CHARACTER SET = latin1;
 
 

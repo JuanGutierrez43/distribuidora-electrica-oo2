@@ -4,7 +4,7 @@ import java.util.Set;
 
 public class Inspector {
 		
-	private int idInspector;
+	private long idInspector;
 	private Set<Zona> zonas;
 	private String nombre;
 	private String apellido;
@@ -24,11 +24,11 @@ public class Inspector {
 		this.telefonoMovil = telefonoMovil;
 	}
 
-	public int getIdInspector() {
+	public long getIdInspector() {
 		return idInspector;
 	}
 
-	protected void setIdInspector(int idInspector) {
+	protected void setIdInspector(long idInspector) {
 		this.idInspector = idInspector;
 	}
 

@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.util.Set;
 
 public class Factura {
-	private int idFactura;
+	private long idFactura;
 	private String datosCliente;
 	private LocalDate fecha;
 	private String observaciones;
@@ -21,7 +21,7 @@ public class Factura {
 		this.lstItem = lstItem;
 	}
 
-	public int getIdFactura() {
+	public long getIdFactura() {
 		return idFactura;
 	}
 

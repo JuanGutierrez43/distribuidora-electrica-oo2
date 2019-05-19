@@ -2,7 +2,7 @@ package datos;
 
 public class Cliente {
 	
-	private int idCliente;
+	private long idCliente;
 	private String direccion;
 	private String email;
 	private long telefonoFijo;
@@ -20,11 +20,11 @@ public class Cliente {
 		this.telefonoMovil = telefonoMovil;
 	}
 
-	public int getIdCliente() {
+	public long getIdCliente() {
 		return idCliente;
 	}
 
-	protected void setIdCliente(int idCliente) {
+	protected void setIdCliente(long idCliente) {
 		this.idCliente = idCliente;
 	}
 

@@ -4,7 +4,7 @@ import java.util.Set;
 
 public class Zona {
 	
-	private int idZona;
+	private long idZona;
 	private String descripcion;
 	private Set<Inspector> inspectores;
 	
@@ -17,11 +17,11 @@ public class Zona {
 		this.descripcion = descripcion;
 	}
 
-	public int getIdZona() {
+	public long getIdZona() {
 		return idZona;
 	}
 
-	protected void setIdZona(int idZona) {
+	protected void setIdZona(long idZona) {
 		this.idZona = idZona;
 	}
 
