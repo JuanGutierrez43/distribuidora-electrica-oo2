@@ -10,17 +10,19 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 -- -----------------------------------------------------
 -- Schema bd-hibernate-edeunla
 -- -----------------------------------------------------
+DROP SCHEMA IF EXISTS `bd-hibernate-edeunla` ;
 
 -- -----------------------------------------------------
 -- Schema bd-hibernate-edeunla
 -- -----------------------------------------------------
-DROP SCHEMA IF EXISTS `bd-hibernate-edeunla` ;
 CREATE SCHEMA IF NOT EXISTS `bd-hibernate-edeunla` DEFAULT CHARACTER SET latin1 ;
 USE `bd-hibernate-edeunla` ;
 
 -- -----------------------------------------------------
 -- Table `bd-hibernate-edeunla`.`medidor`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `bd-hibernate-edeunla`.`medidor` ;
+
 CREATE TABLE IF NOT EXISTS `bd-hibernate-edeunla`.`medidor` (
   `idMedidor` INT(11) NOT NULL AUTO_INCREMENT,
   `idCliente` INT(11) NOT NULL,
@@ -36,8 +38,10 @@ DEFAULT CHARACTER SET = latin1;
 -- -----------------------------------------------------
 -- Table `bd-hibernate-edeunla`.`inspector`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `bd-hibernate-edeunla`.`inspector` ;
+
 CREATE TABLE IF NOT EXISTS `bd-hibernate-edeunla`.`inspector` (
-  `idInspector` INT(11) NOT NULL,
+  `idInspector` INT(11) NOT NULL AUTO_INCREMENT,
   `dni` INT(11) NOT NULL,
   `nombre` VARCHAR(45) NOT NULL,
   `apellido` VARCHAR(45) NOT NULL,
@@ -50,6 +54,8 @@ DEFAULT CHARACTER SET = latin1;
 -- -----------------------------------------------------
 -- Table `bd-hibernate-edeunla`.`lectura`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `bd-hibernate-edeunla`.`lectura` ;
+
 CREATE TABLE IF NOT EXISTS `bd-hibernate-edeunla`.`lectura` (
   `idLectura` INT(11) NOT NULL AUTO_INCREMENT,
   `idInspector` INT(11) NOT NULL,
@@ -75,6 +81,8 @@ DEFAULT CHARACTER SET = latin1;
 -- -----------------------------------------------------
 -- Table `bd-hibernate-edeunla`.`altademanda`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `bd-hibernate-edeunla`.`altademanda` ;
+
 CREATE TABLE IF NOT EXISTS `bd-hibernate-edeunla`.`altademanda` (
   `idAltaDemanda` INT(11) NOT NULL,
   `consumoHorasValle` INT(11) NOT NULL,
@@ -93,6 +101,8 @@ DEFAULT CHARACTER SET = latin1;
 -- -----------------------------------------------------
 -- Table `bd-hibernate-edeunla`.`bajademanda`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `bd-hibernate-edeunla`.`bajademanda` ;
+
 CREATE TABLE IF NOT EXISTS `bd-hibernate-edeunla`.`bajademanda` (
   `idBajaDemanda` INT(11) NOT NULL,
   `consumo` INT(11) NOT NULL,
@@ -109,6 +119,8 @@ DEFAULT CHARACTER SET = latin1;
 -- -----------------------------------------------------
 -- Table `bd-hibernate-edeunla`.`cliente`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `bd-hibernate-edeunla`.`cliente` ;
+
 CREATE TABLE IF NOT EXISTS `bd-hibernate-edeunla`.`cliente` (
   `idCliente` INT(11) NOT NULL AUTO_INCREMENT,
   `direccion` VARCHAR(45) NOT NULL,
@@ -117,13 +129,14 @@ CREATE TABLE IF NOT EXISTS `bd-hibernate-edeunla`.`cliente` (
   `telefonoMovil` INT(11) NOT NULL,
   PRIMARY KEY (`idCliente`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 3
 DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
 -- Table `bd-hibernate-edeunla`.`tarifa`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `bd-hibernate-edeunla`.`tarifa` ;
+
 CREATE TABLE IF NOT EXISTS `bd-hibernate-edeunla`.`tarifa` (
   `idTarifa` INT(11) NOT NULL,
   `servicio` VARCHAR(45) NOT NULL,
@@ -135,6 +148,8 @@ DEFAULT CHARACTER SET = latin1;
 -- -----------------------------------------------------
 -- Table `bd-hibernate-edeunla`.`tarifaalta`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `bd-hibernate-edeunla`.`tarifaalta` ;
+
 CREATE TABLE IF NOT EXISTS `bd-hibernate-edeunla`.`tarifaalta` (
   `idTarifaAlta` INT(11) NOT NULL,
   `tensionContratada` VARCHAR(2) NOT NULL,
@@ -152,6 +167,8 @@ DEFAULT CHARACTER SET = latin1;
 -- -----------------------------------------------------
 -- Table `bd-hibernate-edeunla`.`detallealta`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `bd-hibernate-edeunla`.`detallealta` ;
+
 CREATE TABLE IF NOT EXISTS `bd-hibernate-edeunla`.`detallealta` (
   `idDetalleAlta` INT(11) NOT NULL,
   `idTarifaAlta` INT(11) NOT NULL,
@@ -173,6 +190,8 @@ DEFAULT CHARACTER SET = latin1;
 -- -----------------------------------------------------
 -- Table `bd-hibernate-edeunla`.`tarifabaja`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `bd-hibernate-edeunla`.`tarifabaja` ;
+
 CREATE TABLE IF NOT EXISTS `bd-hibernate-edeunla`.`tarifabaja` (
   `idTarifaBaja` INT(11) NOT NULL,
   PRIMARY KEY (`idTarifaBaja`),
@@ -188,6 +207,8 @@ DEFAULT CHARACTER SET = latin1;
 -- -----------------------------------------------------
 -- Table `bd-hibernate-edeunla`.`detallebaja`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `bd-hibernate-edeunla`.`detallebaja` ;
+
 CREATE TABLE IF NOT EXISTS `bd-hibernate-edeunla`.`detallebaja` (
   `idDetalleBaja` INT(11) NOT NULL,
   `idTarifaBaja` INT(11) NOT NULL,
@@ -210,6 +231,8 @@ DEFAULT CHARACTER SET = latin1;
 -- -----------------------------------------------------
 -- Table `bd-hibernate-edeunla`.`factura`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `bd-hibernate-edeunla`.`factura` ;
+
 CREATE TABLE IF NOT EXISTS `bd-hibernate-edeunla`.`factura` (
   `idFactura` INT(11) NOT NULL,
   `cliente` VARCHAR(45) NOT NULL,
@@ -223,18 +246,21 @@ DEFAULT CHARACTER SET = latin1;
 -- -----------------------------------------------------
 -- Table `bd-hibernate-edeunla`.`zona`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `bd-hibernate-edeunla`.`zona` ;
+
 CREATE TABLE IF NOT EXISTS `bd-hibernate-edeunla`.`zona` (
   `idZona` INT(11) NOT NULL AUTO_INCREMENT,
   `descripcion` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idZona`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 2
 DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
 -- Table `bd-hibernate-edeunla`.`inspectorxzona`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `bd-hibernate-edeunla`.`inspectorxzona` ;
+
 CREATE TABLE IF NOT EXISTS `bd-hibernate-edeunla`.`inspectorxzona` (
   `idInspector` INT(11) NOT NULL,
   `idZona` INT(11) NOT NULL,
@@ -258,6 +284,8 @@ DEFAULT CHARACTER SET = latin1;
 -- -----------------------------------------------------
 -- Table `bd-hibernate-edeunla`.`itemfactura`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `bd-hibernate-edeunla`.`itemfactura` ;
+
 CREATE TABLE IF NOT EXISTS `bd-hibernate-edeunla`.`itemfactura` (
   `idItemFactura` INT(11) NOT NULL,
   `detalle` VARCHAR(45) NOT NULL,
@@ -294,6 +322,8 @@ DEFAULT CHARACTER SET = latin1;
 -- -----------------------------------------------------
 -- Table `bd-hibernate-edeunla`.`personafisica`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `bd-hibernate-edeunla`.`personafisica` ;
+
 CREATE TABLE IF NOT EXISTS `bd-hibernate-edeunla`.`personafisica` (
   `idPersonaFisica` INT(11) NOT NULL,
   `dni` INT(11) NOT NULL,
@@ -312,6 +342,8 @@ DEFAULT CHARACTER SET = latin1;
 -- -----------------------------------------------------
 -- Table `bd-hibernate-edeunla`.`personajuridica`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `bd-hibernate-edeunla`.`personajuridica` ;
+
 CREATE TABLE IF NOT EXISTS `bd-hibernate-edeunla`.`personajuridica` (
   `idPersonaJuridica` INT(11) NOT NULL,
   `cuit` INT(11) NOT NULL,
