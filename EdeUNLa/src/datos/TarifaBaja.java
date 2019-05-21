@@ -9,9 +9,8 @@ public class TarifaBaja extends Tarifa {
 	public TarifaBaja() {
 	}
 
-	public TarifaBaja(Set<DetalleBaja> lstDetalle) {
-		super();
-		this.lstDetalle = lstDetalle;
+	public TarifaBaja(String servicio) {
+		super(servicio);
 	}
 
 	public Set<DetalleBaja> getLstDetalle() {
@@ -25,7 +24,5 @@ public class TarifaBaja extends Tarifa {
 	@Override
 	public String toString() {
 		return "TarifaBaja [lstDetalle=" + lstDetalle + "]";
-	}
-
-	
+	}	
 }

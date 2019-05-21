@@ -11,11 +11,10 @@ public class TarifaAlta extends Tarifa {
 	public TarifaAlta() {
 	}
 
-	public TarifaAlta(String tensionContratada, int limite, Set<DetalleAlta> lstDetalle) {
-		super();
+	public TarifaAlta(String servicio, String tensionContratada, int limite) {
+		super(servicio);
 		this.tensionContratada = tensionContratada;
 		this.limite = limite;
-		this.lstDetalle = lstDetalle;
 	}
 
 	public String getTensionContratada() {
