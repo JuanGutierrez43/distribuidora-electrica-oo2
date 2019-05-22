@@ -8,7 +8,7 @@
 <generator class = "identity"/>
 </id>
 
-<many-to-one name = "tafifaBaja" class = "datos.TarifaBaja" column = "idTarifaBaja" not-null = "true"/>
+<many-to-one name = "tarifaBaja" class = "datos.TarifaBaja" column = "idTarifaBaja" not-null = "true"/>
 
 <property name = "detalleConcepto" column = "detalleConcepto" type = "string"/>
 <property name = "unidad" column = "unidad" type = "string"/>

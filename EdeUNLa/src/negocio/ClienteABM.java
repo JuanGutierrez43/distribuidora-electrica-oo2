@@ -21,7 +21,7 @@ public class ClienteABM {
 		return instancia;
 	}
 
-	public Cliente traer(int idCliente) {
+	public Cliente traer(long idCliente) {
 		return ClienteDao.getInstance().traerCliente(idCliente);
 	}
 
