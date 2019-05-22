@@ -138,7 +138,7 @@ DEFAULT CHARACTER SET = latin1;
 DROP TABLE IF EXISTS `bd-hibernate-edeunla`.`tarifa` ;
 
 CREATE TABLE IF NOT EXISTS `bd-hibernate-edeunla`.`tarifa` (
-  `idTarifa` INT(11) NOT NULL,
+  `idTarifa` INT(11) NOT NULL AUTO_INCREMENT,
   `servicio` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idTarifa`))
 ENGINE = InnoDB
@@ -170,7 +170,7 @@ DEFAULT CHARACTER SET = latin1;
 DROP TABLE IF EXISTS `bd-hibernate-edeunla`.`detallealta` ;
 
 CREATE TABLE IF NOT EXISTS `bd-hibernate-edeunla`.`detallealta` (
-  `idDetalleAlta` INT(11) NOT NULL,
+  `idDetalleAlta` INT(11) NOT NULL AUTO_INCREMENT,
   `idTarifaAlta` INT(11) NOT NULL,
   `detalleConcepto` VARCHAR(45) NOT NULL,
   `unidad` VARCHAR(45) NOT NULL,
@@ -210,7 +210,7 @@ DEFAULT CHARACTER SET = latin1;
 DROP TABLE IF EXISTS `bd-hibernate-edeunla`.`detallebaja` ;
 
 CREATE TABLE IF NOT EXISTS `bd-hibernate-edeunla`.`detallebaja` (
-  `idDetalleBaja` INT(11) NOT NULL,
+  `idDetalleBaja` INT(11) NOT NULL AUTO_INCREMENT,
   `idTarifaBaja` INT(11) NOT NULL,
   `detalleConcepto` VARCHAR(45) NOT NULL,
   `unidad` VARCHAR(45) NOT NULL,
@@ -234,7 +234,7 @@ DEFAULT CHARACTER SET = latin1;
 DROP TABLE IF EXISTS `bd-hibernate-edeunla`.`factura` ;
 
 CREATE TABLE IF NOT EXISTS `bd-hibernate-edeunla`.`factura` (
-  `idFactura` INT(11) NOT NULL,
+  `idFactura` INT(11) NOT NULL AUTO_INCREMENT,
   `cliente` VARCHAR(45) NOT NULL,
   `fecha` DATE NOT NULL,
   `observaciones` VARCHAR(45) NOT NULL,
@@ -287,7 +287,7 @@ DEFAULT CHARACTER SET = latin1;
 DROP TABLE IF EXISTS `bd-hibernate-edeunla`.`itemfactura` ;
 
 CREATE TABLE IF NOT EXISTS `bd-hibernate-edeunla`.`itemfactura` (
-  `idItemFactura` INT(11) NOT NULL,
+  `idItemFactura` INT(11) NOT NULL AUTO_INCREMENT,
   `detalle` VARCHAR(45) NOT NULL,
   `precioUnitario` DOUBLE NOT NULL,
   `cantidad` INT(11) NOT NULL,
