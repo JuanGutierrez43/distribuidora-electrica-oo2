@@ -12,15 +12,14 @@ public class DetalleAlta {
 	public DetalleAlta() {
 	}
 
-	public DetalleAlta(String detalleConcepto, String unidad, boolean superarLimite, double valor) {
+	public DetalleAlta(TarifaAlta tarifaAlta, String detalleConcepto, String unidad, boolean superarLimite, double valor) {
 		super();
+		this.tarifaAlta = tarifaAlta;
 		this.detalleConcepto = detalleConcepto;
 		this.unidad = unidad;
 		this.superarLimite = superarLimite;
 		this.valor = valor;
 	}
-	
-	
 	
 	public long getIdDetalleAlta() {
 		return idDetalleAlta;
@@ -76,7 +75,4 @@ public class DetalleAlta {
 				+ detalleConcepto + ", unidad=" + unidad + ", superarLimite=" + superarLimite + ", valor=" + valor
 				+ "]";
 	}
-
-	
-
 }

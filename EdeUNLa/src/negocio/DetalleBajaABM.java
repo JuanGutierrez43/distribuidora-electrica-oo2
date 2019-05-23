@@ -7,7 +7,7 @@ import datos.DetalleBaja;
 import datos.TarifaBaja;
 
 public class DetalleBajaABM {
-private static DetalleBajaABM instancia = null; // Patrón Singleton
+	private static DetalleBajaABM instancia = null; // Patrón Singleton
 	
 	DetalleBajaDao dao=DetalleBajaDao.getInstance();
 
