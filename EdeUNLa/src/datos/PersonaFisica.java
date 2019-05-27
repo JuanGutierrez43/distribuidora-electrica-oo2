@@ -46,7 +46,13 @@ public class PersonaFisica extends Cliente{
 		this.apellido = apellido;
 	}
 
-
+	public String datosCliente() {
+		return "Dni:" + getDni() + ", Nombre:" + getNombre() + ", Apellido:"
+				+ getApellido() + ", Direccion:" + getDireccion() + ", "
+				+ "Email:" + getEmail() + ", TelefonoFijo:"
+				+ getTelefonoFijo();
+	}
+	
 	@Override
 	public String toString() {
 		return "PersonaFisica [dni=" + dni + ", nombre=" + nombre + ", apellido=" + apellido + "]";

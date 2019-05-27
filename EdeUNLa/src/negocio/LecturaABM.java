@@ -24,7 +24,7 @@ private static LecturaABM instancia = null; // Patrón Singleton
 		return instancia;
 	}
 
-	public Lectura traer(int idCliente) {
+	public Lectura traer(long idCliente) {
 		return LecturaDao.getInstance().traerLectura(idCliente);
 	}
 

@@ -81,7 +81,7 @@ public class DetalleBaja {
 	
 	@Override
 	public String toString() {
-		return "DetalleBaja [idDetalleBaja=" + idDetalleBaja + ", tarifaBaja=" + tarifaBaja + ", detalleConcepto="
+		return "DetalleBaja [idDetalleBaja=" + idDetalleBaja + ", tarifaBaja=" +  ", detalleConcepto="
 				+ detalleConcepto + ", unidad=" + unidad + ", desde=" + desde + ", hasta=" + hasta + ", valor=" + valor
 				+ "]";
 	}

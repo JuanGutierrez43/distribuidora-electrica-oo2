@@ -1,6 +1,6 @@
 package datos;
 
-public class Cliente {
+public abstract class Cliente {
 	
 	private long idCliente;
 	private String direccion;
@@ -60,9 +60,17 @@ public class Cliente {
 		this.telefonoMovil = telefonoMovil;
 	}
 
+	// método para atributo: detalle, de itemFactura
+	public String itemCliente() {
+		return "Cliente [idCliente=" + idCliente + ", direccion=" + direccion + "]";
+	}
+	
+	public abstract String datosCliente();
+	
 	@Override
 	public String toString() {
 		return "Cliente [idCliente=" + idCliente + ", direccion=" + direccion + ", email=" + email + ", telefonoFijo="
 				+ telefonoFijo + ", telefonoMovil=" + telefonoMovil + "]";
 	}
+	
 }

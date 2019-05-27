@@ -32,6 +32,7 @@ public class ClienteABM {
 	public int agregarPersonaFisica(String direccion, String email, long telefonoFijo, long telefonoMovil, long dni, 
 			String nombre, String apellido)throws Exception{
 		Cliente c=new PersonaFisica(direccion, email, telefonoFijo, telefonoMovil, dni, nombre, apellido);
+		System.out.println(c);
 		return dao.agregar(c);
 	}
 	

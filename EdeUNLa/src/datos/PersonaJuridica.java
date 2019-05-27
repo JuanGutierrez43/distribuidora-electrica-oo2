@@ -1,16 +1,16 @@
 package datos;
 
 public class PersonaJuridica extends Cliente {
-	
+
 	private String cuit;
 	private String razonSocial;
-	
+
 	public PersonaJuridica() {
-		
+
 	}
-	
-	public PersonaJuridica(String direccion, String email, long telefonoFijo, long telefonoMovil,
-			String cuit, String razonSocial) {
+
+	public PersonaJuridica(String direccion, String email, long telefonoFijo, long telefonoMovil, String cuit,
+			String razonSocial) {
 		super(direccion, email, telefonoFijo, telefonoMovil);
 		this.cuit = cuit;
 		this.razonSocial = razonSocial;
@@ -32,11 +32,16 @@ public class PersonaJuridica extends Cliente {
 		this.razonSocial = razonSocial;
 	}
 
+	public String datosCliente() {
+		return "PersonaJuridica [getCuit()=" + getCuit() + ", getRazonSocial()=" + getRazonSocial()
+				+ ", datosCliente()=" + datosCliente() + ", getDireccion()=" + getDireccion() + ", getEmail()="
+				+ getEmail() + ", getTelefonoFijo()=" + getTelefonoFijo() + "]";
+	}
+
 	@Override
 	public String toString() {
-		return "PersonaJuridica [cuit=" + cuit + ", razonSocial=" + razonSocial + "]";
+		return "PersonaJuridica [cuit=" + cuit + ", razonSocial=" + razonSocial + ", toString()=" + super.toString()
+				+ "]";
 	}
-	
-	
-	
+
 }

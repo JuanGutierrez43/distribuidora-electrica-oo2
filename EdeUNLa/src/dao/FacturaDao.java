@@ -2,23 +2,22 @@ package dao;
 
 import java.util.List;
 
-import org.hibernate.Hibernate;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import datos.Lectura;
+import datos.Factura;
 
-public class LecturaDao {
-	private static LecturaDao instanciaLecturaDao;
+public class FacturaDao {
+	private static FacturaDao instanciaFacturaDao;
 	protected static Session session;
 	protected Transaction tx;
 	
-	public static LecturaDao getInstance() {
-		if (instanciaLecturaDao == null){
-			instanciaLecturaDao = new LecturaDao();
+	public static FacturaDao getInstance() {
+		if (instanciaFacturaDao == null){
+			instanciaFacturaDao = new FacturaDao();
 		}
-		return instanciaLecturaDao;
+		return instanciaFacturaDao;
 	}
 	
 	private void iniciaOperacion() throws HibernateException{
@@ -31,7 +30,7 @@ public class LecturaDao {
 		throw new HibernateException("ERROR en la capa de acceso a datos", he);
 	}
 	
-	public int agregar(Lectura objeto){
+	public int agregar(Factura objeto){
 		int id=0;
 		try{
 			iniciaOperacion();
@@ -46,7 +45,7 @@ public class LecturaDao {
 		return id;
 	}
 	
-	public void actualizar(Lectura objeto) throws HibernateException{
+	public void actualizar(Factura objeto) throws HibernateException{
 		try{
 			iniciaOperacion();
 			session.update(objeto);
@@ -59,7 +58,7 @@ public class LecturaDao {
 		}
 	}
 	
-	public void eliminar(Lectura objeto) throws HibernateException{
+	public void eliminar(Factura objeto) throws HibernateException{
 		try{
 			iniciaOperacion();
 			session.delete(objeto);
@@ -72,15 +71,11 @@ public class LecturaDao {
 		}
 	}
 	
-	public Lectura traerLectura(long idLectura) throws HibernateException{
-		Lectura objeto=null;
+	public Factura traerFactura(long idFactura) throws HibernateException{
+		Factura objeto=null;
 		try{
 			iniciaOperacion();
-			objeto=(Lectura)session.get(Lectura.class, idLectura);
-			Hibernate.initialize(objeto.getInspector());
-			Hibernate.initialize(objeto.getMedidor());
-			Hibernate.initialize(objeto.getMedidor().getCliente());
-			Hibernate.initialize(objeto.getMedidor().getZona());
+			objeto=(Factura)session.get(Factura.class, idFactura);
 		}finally{
 			session.close();
 		}
@@ -88,11 +83,11 @@ public class LecturaDao {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public List<Lectura> traerLecturas() throws HibernateException{
-		List<Lectura> lista=null;
+	public List<Factura> traerFactura() throws HibernateException{
+		List<Factura> lista=null;
 		try{
 			iniciaOperacion();
-			lista=session.createQuery("from Lectura l order by m.idLectura asc").list();
+			lista=session.createQuery("from Factura f order by f.idFactura asc").list();
 		}finally{
 			session.close();
 		}

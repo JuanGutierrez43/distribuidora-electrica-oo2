@@ -11,20 +11,20 @@ public class ItemFactura {
 	private Tarifa tarifa;
 	private Lectura lectura;
 	private Factura factura;
-
+	
 	public ItemFactura() {
 	}
 
-	public ItemFactura(String detalle, double precioUnitario, int cantidad, String unidad, int nroMedidor,
-			Tarifa tarifa, Lectura lectura) {
+	public ItemFactura(double precioUnitario, int cantidad, String unidad, Tarifa tarifa, Lectura lectura,Factura factura) {
 		super();
-		this.detalle = detalle;
+		this.detalle = lectura.getMedidor().getCliente().itemCliente();
 		this.precioUnitario = precioUnitario;
 		this.cantidad = cantidad;
 		this.unidad = unidad;
-		this.nroMedidor = nroMedidor;
-		this.tarifa = tarifa;
+		this.nroMedidor = lectura.getMedidor().getNroSerie();
+		this.tarifa = tarifa; //auto
 		this.lectura = lectura;
+		this.factura = factura; //auto
 	}
 
 	public long getIdItemFactura() {

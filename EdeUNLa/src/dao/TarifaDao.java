@@ -1,12 +1,18 @@
 package dao;
 
 import java.util.List;
+import java.util.Set;
 
+import org.hibernate.Hibernate;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import datos.DetalleAlta;
+import datos.DetalleBaja;
 import datos.Tarifa;
+import datos.TarifaAlta;
+import datos.TarifaBaja;
 
 public class TarifaDao {
 	private static TarifaDao instanciaTarifaDao;
@@ -76,6 +82,19 @@ public class TarifaDao {
 		try{
 			iniciaOperacion();
 			objeto=(Tarifa)session.get(Tarifa.class, idTarifa);
+			if (objeto instanceof TarifaBaja) {
+				Hibernate.initialize(((TarifaBaja) objeto));
+				
+				Set<DetalleBaja> detalles =  ((TarifaBaja) objeto).getLstDetalle();
+				for (DetalleBaja d : detalles) {
+					Hibernate.initialize(d);
+					Hibernate.initialize(d.getTarifaBaja());
+					
+				}
+				
+			}
+			
+			
 		}finally{
 			session.close();
 		}
@@ -88,6 +107,30 @@ public class TarifaDao {
 		try{
 			iniciaOperacion();
 			lista=session.createQuery("from Tarifa t order by t.idTarifa asc").list();
+			
+			List<Tarifa> lsTarifa = lista;
+			
+			for (Tarifa t : lsTarifa) {
+				if (t instanceof TarifaBaja) {
+					Hibernate.initialize(((TarifaBaja)t).getLstDetalle());
+					Set<DetalleBaja> lstDetalle = ((TarifaBaja)t).getLstDetalle();
+					for (DetalleBaja detalle : lstDetalle) {
+						Hibernate.initialize(detalle);
+						Hibernate.initialize(detalle.getTarifaBaja());
+					}
+					
+				}
+				if (t instanceof TarifaAlta) {
+					Hibernate.initialize(((TarifaAlta)t).getLstDetalle());
+					Set<DetalleAlta> lstDetalle = ((TarifaAlta)t).getLstDetalle();
+					for (DetalleAlta detalle : lstDetalle) {
+						Hibernate.initialize(detalle);
+						Hibernate.initialize(detalle.getTarifaAlta());
+					}
+				}
+				
+			}
+			
 		}finally{
 			session.close();
 		}

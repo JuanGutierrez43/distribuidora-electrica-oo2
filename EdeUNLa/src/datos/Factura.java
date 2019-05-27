@@ -1,6 +1,7 @@
 package datos;
 
 import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.Set;
 
 public class Factura {
@@ -13,19 +14,19 @@ public class Factura {
 	public Factura() {
 	}
 
-	public Factura(String datosCliente, LocalDate fecha, String observaciones, Set<ItemFactura> lstItem) {
+	public Factura(String datosCliente, LocalDate fecha, String observaciones) {
 		super();
 		this.datosCliente = datosCliente;
 		this.fecha = fecha;
 		this.observaciones = observaciones;
-		this.lstItem = lstItem;
+		this.lstItem = new HashSet<ItemFactura>();
 	}
 
 	public long getIdFactura() {
 		return idFactura;
 	}
 
-	protected void setIdFactura(int idFactura) {
+	protected void setIdFactura(long idFactura) {
 		this.idFactura = idFactura;
 	}
 
@@ -62,7 +63,6 @@ public class Factura {
 	}
 
 	// Métodos
-	
 	public double calcularTotal() {
 		return 0;
 	}

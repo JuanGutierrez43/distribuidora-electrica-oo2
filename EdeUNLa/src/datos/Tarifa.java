@@ -31,7 +31,7 @@ public class Tarifa {
 
 	@Override
 	public String toString() {
-		return "Tarifa [idTarifa=" + idTarifa + ", servicio=" + servicio + "]";
+		return "Tarifa [idTarifa=" + idTarifa + ", servicio=" + servicio + "]\n";
 	}
 
 }

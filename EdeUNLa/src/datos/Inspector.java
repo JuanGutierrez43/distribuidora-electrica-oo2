@@ -74,12 +74,8 @@ public class Inspector {
 
 	@Override
 	public String toString() {
-		return "Inspector [idInspector=" + idInspector + ", zonas=" + zonas + ", nombre=" + nombre + ", apellido="
+		return "Inspector [idInspector=" + idInspector + ", nombre=" + nombre + ", apellido="
 				+ apellido + ", dni=" + dni + ", telefonoMovil=" + telefonoMovil + "]";
 	}
-
-
-	
-	
 	
 }

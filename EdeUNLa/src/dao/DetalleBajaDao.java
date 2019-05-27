@@ -1,12 +1,15 @@
 package dao;
 
 import java.util.List;
+import java.util.Set;
 
+import org.hibernate.Hibernate;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import datos.DetalleBaja;
+import datos.TarifaBaja;
 
 public class DetalleBajaDao {
 	private static DetalleBajaDao instanciaDetalleBajaDao;
@@ -76,6 +79,7 @@ public class DetalleBajaDao {
 		try{
 			iniciaOperacion();
 			objeto=(DetalleBaja)session.get(DetalleBaja.class, idDetalleBaja);
+			Hibernate.initialize(objeto.getTarifaBaja());
 		}finally{
 			session.close();
 		}

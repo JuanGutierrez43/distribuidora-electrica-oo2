@@ -16,7 +16,7 @@
 <property column = "limite" name = "limite" type = "int"/>
 
 <set name = "lstDetalle" table = "detallealta" order-by = "idDetalleAlta asc" inverse = "true" lazy = "true" fetch = "select">
-<key column = "idTarifa" not-null = "true"/>
+<key column = "idTarifaAlta" not-null = "true"/>
 <one-to-many class = "datos.DetalleAlta"/>
 </set>
 
@@ -26,7 +26,7 @@
 <key column = "idTarifaBaja"/>
 
 <set name = "lstDetalle" table = "detallebaja" order-by = "idDetalleBaja asc" inverse = "true" lazy = "true" fetch = "select">
-<key column = "idTarifa" not-null = "true"/>
+<key column = "idTarifaBaja" not-null = "true"/>
 <one-to-many class = "datos.DetalleBaja"/>
 </set>
 
