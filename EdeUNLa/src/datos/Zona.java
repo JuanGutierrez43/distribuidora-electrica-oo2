@@ -43,7 +43,7 @@ public class Zona {
 
 	@Override
 	public String toString() {
-		return "Zona [idZona=" + idZona + ", descripcion=" + descripcion + ", inspectores=" + inspectores + "]";
+		return "Zona [idZona=" + idZona + ", descripcion=" + descripcion + "]";
 	}
 	
 	

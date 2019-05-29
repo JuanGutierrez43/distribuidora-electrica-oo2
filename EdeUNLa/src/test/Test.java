@@ -213,7 +213,7 @@ public class Test {
 		try {
 			ClienteABM abmCliente = ClienteABM.getInstance();
 			FacturaABM abm = FacturaABM.getInstance();
-			abm.agregar(abmCliente.traer(1).datosCliente() + " ", LocalDate.now(), "Ninguna");
+			//abm.agregar(abmCliente.traer(1).datosCliente() + " ", LocalDate.now(), "Ninguna");
 		} catch (Exception e) {
 			System.out.println(e);
 		}
