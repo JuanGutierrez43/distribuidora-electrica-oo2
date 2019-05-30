@@ -3,7 +3,7 @@
 <TABLE border = "0" width = "100%">
 <TR>
 	<TD align = "left">
-		<IMG src = "/EdeUNLa/images/imagen.jpg">
+		<IMG src = "images/imagen.jpg" width="400">
 	</TD>
 	<TD align = "center">
 		<H1> EdeUNLa </H1>
