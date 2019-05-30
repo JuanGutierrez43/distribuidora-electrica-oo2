@@ -19,4 +19,13 @@
 		<servlet-name> ControladorMostrarLectura </servlet-name>
 		<url-pattern> /MostrarLectura </url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name> ControladorMostrarLecturaJSP </servlet-name>
+		<servlet-class> controladores.ControladorMostrarLecturaJSP </servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name> ControladorMostrarLecturaJSP </servlet-name>
+		<url-pattern> /MostrarLecturaJSP </url-pattern>
+	</servlet-mapping>
 </web-app>
