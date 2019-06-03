@@ -7,6 +7,7 @@ public class ItemFactura {
 	private double precioUnitario;
 	private int cantidad;
 	private String unidad;
+	
 	private int nroMedidor;
 	private Tarifa tarifa;
 	private Lectura lectura;
@@ -17,14 +18,14 @@ public class ItemFactura {
 
 	public ItemFactura(double precioUnitario, int cantidad, String unidad, Tarifa tarifa, Lectura lectura,Factura factura) {
 		super();
-		this.detalle = lectura.getMedidor().getCliente().itemCliente();
+		this.detalle = "Detalle: fecha " + lectura.getFecha() + " Localizado en: "+ lectura.getMedidor().getDomicilioMedidor();
 		this.precioUnitario = precioUnitario;
 		this.cantidad = cantidad;
 		this.unidad = unidad;
 		this.nroMedidor = lectura.getMedidor().getNroSerie();
-		this.tarifa = tarifa; //auto
+		this.tarifa = tarifa;
 		this.lectura = lectura;
-		this.factura = factura; //auto
+		this.factura = factura;
 	}
 
 	public long getIdItemFactura() {
@@ -101,14 +102,14 @@ public class ItemFactura {
 
 	// métodos
 	public double calcularSubTotal() {
-		return 0;
+		return getCantidad()*getPrecioUnitario();
 	}
 
 	@Override
 	public String toString() {
 		return "ItemFactura [idItemFactura=" + idItemFactura + ", detalle=" + detalle + ", precioUnitario="
 				+ precioUnitario + ", cantidad=" + cantidad + ", unidad=" + unidad + ", nroMedidor=" + nroMedidor
-				+ ", tarifa=" + tarifa + ", lectura=" + lectura + ", factura=" + factura + "]";
+				+ ", tarifa=" + tarifa + ", lectura=" + lectura + "]";
 	}
 
 

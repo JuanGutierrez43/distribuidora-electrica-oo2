@@ -3,6 +3,7 @@ package test;
 import java.time.LocalDate;
 
 import datos.Cliente;
+import datos.Factura;
 import datos.Inspector;
 import datos.Medidor;
 import datos.TarifaAlta;
@@ -48,6 +49,15 @@ public class Test {
 			System.out.println(e);
 		}
 
+		// test2.2
+		try {
+			ClienteABM abm = ClienteABM.getInstance();
+			abm.agregarPersonaFisica("C832", "josevictoribanez@hotmail.com", 42711936, 1141966105, 36068006,
+					"Victor", "Ibañez");
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		
 		// test4
 		try {
 			MedidorABM abmMedidor = MedidorABM.getInstance();
@@ -56,6 +66,18 @@ public class Test {
 			ZonaABM abmZona = ZonaABM.getInstance();
 			Zona z = abmZona.traer(1);
 			abmMedidor.agregarMedidor(c, 1, "Antonio Mentruyt 1443", z);
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		
+		// test4.2 victor
+		try {
+			MedidorABM abmMedidor = MedidorABM.getInstance();
+			ClienteABM abmCliente = ClienteABM.getInstance();
+			Cliente c = abmCliente.traer(3);
+			ZonaABM abmZona = ZonaABM.getInstance();
+			Zona z = abmZona.traer(1);
+			abmMedidor.agregarMedidor(c, 2, "C832", z);
 		} catch (Exception e) {
 			System.out.println(e);
 		}
@@ -209,17 +231,36 @@ public class Test {
 			System.out.println(e);
 		}
 		
+		// test11.2 victor
+				try {
+					LecturaABM abm = LecturaABM.getInstance();
+					InspectorABM abmInspector = InspectorABM.getInstance();
+					Inspector i = abmInspector.traer(1);
+					MedidorABM abmMedidor = MedidorABM.getInstance();
+					Medidor m = abmMedidor.traer(2);
+					abm.agregarLecturaBajaDemanda(LocalDate.of(2018, 12, 10), i, m, 200);
+				} catch (Exception e) {
+					System.out.println(e);
+				}
+
+				try {
+					LecturaABM abm = LecturaABM.getInstance();
+					InspectorABM abmInspector = InspectorABM.getInstance();
+					Inspector i = abmInspector.traer(1);
+					MedidorABM abmMedidor = MedidorABM.getInstance();
+					Medidor m = abmMedidor.traer(2);
+					abm.agregarLecturaBajaDemanda(LocalDate.of(2019, 2, 10), i, m, 515);
+				} catch (Exception e) {
+					System.out.println(e);
+				}
 		// test12 Factura
 		try {
-			ClienteABM abmCliente = ClienteABM.getInstance();
-			FacturaABM abm = FacturaABM.getInstance();
-			//abm.agregar(abmCliente.traer(1).datosCliente() + " ", LocalDate.now(), "Ninguna");
+			FacturaABM abmFactura = FacturaABM.getInstance();
+			Factura factura = abmFactura.generarFactura(MedidorABM.getInstance().traer(2), 2, 2019);
+			abmFactura.alta(factura);
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-		
-		//test13 ItemFactura
-		
 		
 		
 	}

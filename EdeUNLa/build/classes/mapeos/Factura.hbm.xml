@@ -12,7 +12,7 @@
 <property name = "fecha" column = "fecha" type = "LocalDate"/>
 <property name = "observaciones" column = "observaciones" type = "string"/>
 
-<set name = "lstItem" table = "itemfactura" order-by = "idItemFactura asc" inverse = "true" lazy = "true" fetch = "select">
+<set name = "lstItem" cascade="save-update" table = "itemfactura" order-by = "idItemFactura asc" inverse = "true" lazy = "true" fetch = "select">
 <key column = "idFactura" not-null = "true"/>
 <one-to-many class = "datos.ItemFactura"/>
 </set>

@@ -46,8 +46,8 @@ public class AltaDemanda extends Lectura {
 	@Override
 	public String toString() {
 		return "AltaDemanda [consumoHorasValle=" + consumoHorasValle + ", consumoHorasPico=" + consumoHorasPico
-				+ ", consumoHorasResto=" + consumoHorasResto + ", getIdLectura()=" + getIdLectura() + ", getFecha()="
-				+ getFecha() + ", getInspector()=" + getInspector() + ", getMedidor()=" + getMedidor() + "]";
+				+ ", consumoHorasResto=" + consumoHorasResto + ", IdLectura()=" + getIdLectura() + ", Fecha()="
+				+ getFecha() + ", Inspector()=" + getInspector() + ", Medidor()=" + getMedidor() + "]\n";
 	}
 
 }

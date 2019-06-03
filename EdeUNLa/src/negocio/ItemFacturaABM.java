@@ -31,9 +31,10 @@ private static ItemFacturaABM instancia = null; // Patrón Singleton
 	}
 	
 	public int agregarItemFactura(double precioUnitario, int cantidad, String unidad, Lectura lectura)throws Exception{
-		
-		
 		ItemFactura i=new ItemFactura(precioUnitario, cantidad, unidad, new Tarifa(), lectura, new Factura());
 		return dao.agregar(i);
 	}
+	
+	
+	
 }

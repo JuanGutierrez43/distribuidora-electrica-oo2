@@ -8,6 +8,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import datos.Lectura;
+import datos.Medidor;
 
 public class LecturaDao {
 	private static LecturaDao instanciaLecturaDao;
@@ -87,15 +88,38 @@ public class LecturaDao {
 		return objeto;
 	}
 	
+	public Lectura traerLectura(Medidor medidor, int mes, int anio) {
+		Lectura objeto=null;
+		try{
+			iniciaOperacion();
+			objeto=(Lectura)session.createQuery("from Lectura l where l.medidor.idMedidor = "+medidor.getIdMedidor()+ " and month(l.fecha) = "+mes+" and year(l.fecha) = "+anio).uniqueResult();
+			Hibernate.initialize(objeto.getInspector());
+			Hibernate.initialize(objeto.getMedidor());
+			Hibernate.initialize(objeto.getMedidor().getCliente());
+			Hibernate.initialize(objeto.getMedidor().getZona());
+		}finally{
+			session.close();
+		}
+		return objeto;
+	}
+	
 	@SuppressWarnings("unchecked")
 	public List<Lectura> traerLecturas() throws HibernateException{
 		List<Lectura> lista=null;
 		try{
 			iniciaOperacion();
-			lista=session.createQuery("from Lectura l order by m.idLectura asc").list();
+			lista=session.createQuery("from Lectura l order by l.idLectura asc").list();
+			for (Lectura objeto : lista) {
+				Hibernate.initialize(objeto.getInspector());
+				Hibernate.initialize(objeto.getMedidor());
+				Hibernate.initialize(objeto.getMedidor().getCliente());
+				Hibernate.initialize(objeto.getMedidor().getZona());
+			}
 		}finally{
 			session.close();
 		}
 		return lista;
 	}
+
+	
 }

@@ -1,11 +1,16 @@
 package test;
 
+import java.util.List;
+
 import datos.AltaDemanda;
 import datos.BajaDemanda;
+import datos.DetalleBaja;
 import datos.Lectura;
+import datos.TarifaBaja;
 import negocio.DetalleBajaABM;
 //import negocio.ItemFacturaABM;
 import negocio.LecturaABM;
+import negocio.MedidorABM;
 import negocio.TarifaABM;
 
 public class TestAgregarItemFacturaBaja {
@@ -18,33 +23,63 @@ public class TestAgregarItemFacturaBaja {
 			// construcción
 
 			LecturaABM abmLectura = LecturaABM.getInstance();
-			Lectura lectura = abmLectura.traer(2);
+			//Lectura lectura = abmLectura.traer(3);
+			List <Lectura> lstLectura = abmLectura.traer();
 
-			System.out.println(lectura);
-			if (lectura instanceof AltaDemanda) {
-				// casteamos
-				AltaDemanda lecturaBaja = (AltaDemanda) lectura;
-				int consumo = lecturaBaja.getConsumoHorasPico();
-				System.out.println(consumo + " ");
-
-			}
+			//System.out.println(lstLectura);
+			
+			MedidorABM abmMedidor = MedidorABM.getInstance();
+			Lectura lectura = abmLectura.traer(abmMedidor.traer(1),7,2019);
+			
+			
+			TarifaABM abmTarifa = TarifaABM.getInstance();
 
 			if (lectura instanceof BajaDemanda) {
 				BajaDemanda lecturaBaja = (BajaDemanda) lectura;
-				int consumo = lecturaBaja.getConsumo();
 
-				System.out.println(consumo + " ");
+				System.out.println(lecturaBaja);
+				System.out.println(((TarifaBaja) abmTarifa.traer(lecturaBaja).get(0)).getLstDetalle());
+				System.out.println();
+				float total = 0;
+				double precioUnitario = 0;
+				int cantidad = 0;
+				String unidad = null;
+				cantidad = lecturaBaja.getConsumo();//-abmLectura.traerLecturaAnterior(lecturaBaja).getConsumo();
+				
+				for (DetalleBaja db : ((TarifaBaja) abmTarifa.traer(lecturaBaja).get(0)).getLstDetalle()) {
+					if (db.getDetalleConcepto().equalsIgnoreCase("Cargo Fijo")) {
+						total += db.getValor();
+						unidad = db.getUnidad();
+					} else {
+						total += db.getValor() * (cantidad - db.getDesde());
+						//- lectura anterior
+						precioUnitario = db.getValor();
+					}
+//					System.out.println("subT : " + total);
+				}
 
-				DetalleBajaABM abmBaja = DetalleBajaABM.getInstance();
-
-				double precioUnitario = abmBaja.traer(1).getValor();
-
-				System.out.println(precioUnitario + "$/mes" + abmBaja.traer(1));
+				// itemFactura
+				System.out.println("Detalle: fecha " + lecturaBaja.getFecha() + ", Localizado en: "
+						+ lecturaBaja.getMedidor().getDomicilioMedidor());
+				System.out.println("Total: " + total);
+				System.out.println("precioUnitario: " + precioUnitario);
+				System.out.println("cantidad: " + cantidad);
+				System.out.println("unidad: " + unidad);
+				System.out.println("nroMedidor: " + lecturaBaja.getMedidor().getNroSerie());
+				System.out.println("Tarifa -> " + abmTarifa.traer(lecturaBaja));
+				System.out.println("Lectura -> " + lecturaBaja);
 
 			}
-			TarifaABM abmTarifa = TarifaABM.getInstance();
 
-			System.out.println(abmTarifa.traer());
+			if (lectura instanceof AltaDemanda) {
+				AltaDemanda lecturaAlta = (AltaDemanda) lectura;
+				int consumo = lecturaAlta.getConsumoHorasPico();
+
+				// System.out.println(consumo + " ");
+				System.out.println(lecturaAlta);
+
+				System.out.println(abmTarifa.traer(lecturaAlta));
+			}
 
 			// abm.agregarItemFactura(precioUnitario, consumo, "$/mes", lectura);
 		} catch (Exception e) {

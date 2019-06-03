@@ -18,14 +18,18 @@ public class BajaDemanda extends Lectura {
 		return consumo;
 	}
 
+	public int getConsumo(BajaDemanda bajaDemanda) {
+		return consumo-bajaDemanda.getConsumo();
+	}
+	
 	public void setConsumo(int consumo) {
 		this.consumo = consumo;
 	}
 
 	@Override
 	public String toString() {
-		return "BajaDemanda [consumo=" + consumo + ", getIdLectura()=" + getIdLectura() + ", getFecha()=" + getFecha()
-				+ ", getInspector()=" + getInspector() + ", getMedidor()=" + getMedidor() + "]";
+		return "BajaDemanda [consumo=" + consumo + ", IdLectura()=" + getIdLectura() + ", Fecha()=" + getFecha()
+				+ ", Inspector()=" + getInspector() + ", Medidor()=" + getMedidor() + "]\n";
 	}
 
 }

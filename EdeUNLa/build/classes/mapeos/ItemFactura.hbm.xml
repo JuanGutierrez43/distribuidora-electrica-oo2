@@ -14,9 +14,8 @@
 <property name = "unidad" column = "unidad" type = "string"/>
 <property name = "nroMedidor" column = "nroMedidor" type = "int"/>
 
-<one-to-one name = "tarifa" class = "datos.Tarifa" ></one-to-one>
-<one-to-one name = "lectura" class = "datos.Lectura" ></one-to-one>
-
+<many-to-one name = "tarifa" class = "datos.Tarifa" column = "idTarifa" not-null = "true"/>
+<many-to-one name = "lectura" class = "datos.Lectura" column = "idLectura" not-null = "true"/>
 <many-to-one name = "factura" class = "datos.Factura" column = "idFactura" not-null = "true"/>
 
 

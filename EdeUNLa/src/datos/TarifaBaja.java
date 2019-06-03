@@ -23,6 +23,7 @@ public class TarifaBaja extends Tarifa {
 
 	@Override
 	public String toString() {
-		return "TarifaBaja [lstDetalle=" + lstDetalle + "]\n";
-	}	
+		return "TarifaBaja [lstDetalle=" + lstDetalle + ", toString=" + super.toString() + "]";
+	}
+
 }

@@ -2,6 +2,7 @@ package dao;
 
 import java.util.List;
 
+import org.hibernate.Hibernate;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -76,6 +77,9 @@ public class MedidorDao {
 		try{
 			iniciaOperacion();
 			objeto=(Medidor)session.get(Medidor.class, idMedidor);
+			Hibernate.initialize(objeto.getCliente());
+			Hibernate.initialize(objeto.getZona());
+			
 		}finally{
 			session.close();
 		}

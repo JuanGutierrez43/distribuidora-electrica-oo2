@@ -8,8 +8,10 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import datos.BajaDemanda;
 import datos.DetalleAlta;
 import datos.DetalleBaja;
+import datos.Lectura;
 import datos.Tarifa;
 import datos.TarifaAlta;
 import datos.TarifaBaja;
@@ -136,4 +138,5 @@ public class TarifaDao {
 		}
 		return lista;
 	}
+	
 }

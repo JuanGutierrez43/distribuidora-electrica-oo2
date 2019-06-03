@@ -7,6 +7,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import datos.Factura;
+import datos.Medidor;
 
 public class FacturaDao {
 	private static FacturaDao instanciaFacturaDao;
@@ -93,4 +94,17 @@ public class FacturaDao {
 		}
 		return lista;
 	}
+
+//	public Factura traerFactura(int mes, int anio) {
+//		Factura objeto=null;
+//		try{
+//			iniciaOperacion();
+//			objeto=(Factura)session.get(Factura.class, idFactura);
+//			
+//			
+//		}finally{
+//			session.close();
+//		}
+//		return objeto;
+//	}
 }

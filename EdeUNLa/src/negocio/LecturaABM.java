@@ -42,4 +42,9 @@ private static LecturaABM instancia = null; // Patrón Singleton
 		Lectura l=new BajaDemanda(fecha, inspector, medidor, consumo);
 		return dao.agregar(l);
 	}
+	
+	public Lectura traer(Medidor medidor, int mes, int anio) {
+		return LecturaDao.getInstance().traerLectura(medidor, mes, anio);
+	}
+	
 }

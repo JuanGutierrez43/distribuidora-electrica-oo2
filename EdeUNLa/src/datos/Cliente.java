@@ -62,7 +62,8 @@ public abstract class Cliente {
 
 	// método para atributo: detalle, de itemFactura
 	public String itemCliente() {
-		return "Cliente [idCliente=" + idCliente + ", direccion=" + direccion + "]";
+		return "Cliente [idCliente=" + idCliente + ", direccion=" + direccion + ", telefonoFijo="
+				+ telefonoFijo + ", telefonoMovil=" + telefonoMovil + "]";
 	}
 	
 	public abstract String datosCliente();

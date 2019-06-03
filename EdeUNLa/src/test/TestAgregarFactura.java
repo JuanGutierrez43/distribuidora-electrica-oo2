@@ -1,10 +1,8 @@
 package test;
 
-import java.time.LocalDate;
-
-import negocio.ClienteABM;
+import datos.Factura;
 import negocio.FacturaABM;
-import negocio.LecturaABM;;
+import negocio.MedidorABM;;
 
 public class TestAgregarFactura {
 
@@ -13,14 +11,14 @@ public class TestAgregarFactura {
 		// TODO Auto-generated method stub
 		try {
 
-			ClienteABM abmCliente = ClienteABM.getInstance();
 			FacturaABM abmFactura = FacturaABM.getInstance();
-			long idFactura = 0;
-			idFactura = abmFactura.agregar(abmCliente.traer(1).datosCliente() + " ", LocalDate.now(), "Ninguna");
-			
-			LecturaABM abmLectura = LecturaABM.getInstance();
-			
-			// abmFactura.agregarItemFactura(idFactura,abmLectura.traer(2)); ¡en proceso de construcción
+
+//			Medidor medidor : medidor que tiene los datos del cliente para buscar
+//			int mes : mes del 1 al 12 que requiere para la busqueda de lectura , tambien sirve para trae la lectura de 2 mes atras
+//			int anio : año que requiere para la busqueda de lectura
+			Factura factura = abmFactura.generarFactura(MedidorABM.getInstance().traer(2), 2, 2019);
+			System.out.println(factura);
+			abmFactura.alta(factura);
 			
 		} catch (Exception e) {
 			System.out.println(e);
