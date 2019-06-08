@@ -7,7 +7,6 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import datos.Factura;
-import datos.Medidor;
 
 public class FacturaDao {
 	private static FacturaDao instanciaFacturaDao;

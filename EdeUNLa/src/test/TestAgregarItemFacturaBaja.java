@@ -16,7 +16,7 @@ import negocio.TarifaABM;
 public class TestAgregarItemFacturaBaja {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		// Este TestAgregarItemFacturaBaja no funciona a propósito por Victor pero sirve para saber dónde sacar los datos de itemFactura 
 		try {
 
 			// ItemFacturaABM abm = ItemFacturaABM.getInstance(); ¡en proceso de

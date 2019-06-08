@@ -33,17 +33,22 @@ public class FacturaABM {
 		return FacturaDao.getInstance().traerFactura();
 	}
 
-	public Factura generarFactura(Medidor medidor,int mes,int anio) {
+	public Factura generarFactura(Medidor medidor,int mes,int anio) throws Exception {
 		Factura f = new Factura(medidor.getCliente().itemCliente(), LocalDate.of(anio, mes, LocalDate.now().getDayOfMonth()), "Ninguna");
-		Lectura lecturaNueva = LecturaABM.getInstance().traer(medidor, mes, anio);
 		
-		LocalDate date = LocalDate.of(anio, mes, 10);
-		date = date.minusMonths(2);
-		Lectura lecturaAnterior = LecturaABM.getInstance().traer(medidor, date.getMonthValue(), date.getYear());
-
-		if (lecturaNueva instanceof BajaDemanda) {
-			f.setLstItemBajaDemanda(lecturaNueva, (BajaDemanda)lecturaAnterior, TarifaABM.getInstance().traerXConsumo(((BajaDemanda)lecturaNueva).getConsumo((BajaDemanda)lecturaAnterior)).get(1));
-		}else if (lecturaNueva instanceof AltaDemanda) {
+		List<Lectura> lstLectura = LecturaABM.getInstance().traer(medidor, LocalDate.of(anio, mes, 10), LocalDate.of(anio, mes, 10).minusMonths(2));
+		
+		if (lstLectura.size() == 1) { // Si es la primera lectura entonces creo otra para que no se caiga el código  
+			lstLectura.add(0,new BajaDemanda(lstLectura.get(0).getFecha(), lstLectura.get(0).getInspector(),lstLectura.get(0).getMedidor(), 0));
+		}
+		
+		if (lstLectura.get(1) instanceof BajaDemanda) {
+			f.setLstItemBajaDemanda(
+					lstLectura.get(1), 
+					(BajaDemanda) lstLectura.get(0),
+					TarifaABM.getInstance().traerXConsumo(((BajaDemanda) lstLectura.get(1)).getConsumo((BajaDemanda) lstLectura.get(0))).get(1)
+			);
+		} else if (lstLectura.get(1) instanceof AltaDemanda) {
 			// próximo hacer
 		}
 		return f;

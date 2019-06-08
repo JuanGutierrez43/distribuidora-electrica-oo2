@@ -32,8 +32,7 @@ private static LecturaABM instancia = null; // Patrón Singleton
 		return LecturaDao.getInstance().traerLecturas();
 	}
 	
-	public int agregarLecturaAltaDemanda(LocalDate fecha, Inspector inspector, Medidor medidor, int consumoHorasValle, int consumoHoraPico, 
-			int consumoHorasResto)throws Exception{
+	public int agregarLecturaAltaDemanda(LocalDate fecha, Inspector inspector, Medidor medidor, int consumoHorasValle, int consumoHoraPico, int consumoHorasResto)throws Exception{
 		Lectura l=new AltaDemanda(fecha, inspector, medidor, consumoHorasValle, consumoHoraPico, consumoHorasResto);
 		return dao.agregar(l);
 	}
@@ -43,8 +42,12 @@ private static LecturaABM instancia = null; // Patrón Singleton
 		return dao.agregar(l);
 	}
 	
-	public Lectura traer(Medidor medidor, int mes, int anio) {
+	public Lectura traer(Medidor medidor, int mes, int anio) throws Exception{
 		return LecturaDao.getInstance().traerLectura(medidor, mes, anio);
+	}
+
+	public List<Lectura> traer(Medidor medidor, LocalDate date1, LocalDate date2) {
+		return LecturaDao.getInstance().traerLectura(medidor, date1, date2);
 	}
 	
 }

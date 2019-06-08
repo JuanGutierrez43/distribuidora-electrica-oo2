@@ -253,7 +253,17 @@ public class Test {
 				} catch (Exception e) {
 					System.out.println(e);
 				}
-		// test12 Factura
+		
+		// test12 Factura1
+		try {
+			FacturaABM abmFactura = FacturaABM.getInstance();
+			Factura factura = abmFactura.generarFactura(MedidorABM.getInstance().traer(2), 12, 2018);
+			abmFactura.alta(factura);
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+
+		// test13 Factura2
 		try {
 			FacturaABM abmFactura = FacturaABM.getInstance();
 			Factura factura = abmFactura.generarFactura(MedidorABM.getInstance().traer(2), 2, 2019);
@@ -261,7 +271,6 @@ public class Test {
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-		
 		
 	}
 

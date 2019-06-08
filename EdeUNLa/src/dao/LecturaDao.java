@@ -1,5 +1,6 @@
 package dao;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.hibernate.Hibernate;
@@ -88,7 +89,7 @@ public class LecturaDao {
 		return objeto;
 	}
 	
-	public Lectura traerLectura(Medidor medidor, int mes, int anio) {
+	public Lectura traerLectura(Medidor medidor, int mes, int anio) throws HibernateException {
 		Lectura objeto=null;
 		try{
 			iniciaOperacion();
@@ -109,6 +110,24 @@ public class LecturaDao {
 		try{
 			iniciaOperacion();
 			lista=session.createQuery("from Lectura l order by l.idLectura asc").list();
+			for (Lectura objeto : lista) {
+				Hibernate.initialize(objeto.getInspector());
+				Hibernate.initialize(objeto.getMedidor());
+				Hibernate.initialize(objeto.getMedidor().getCliente());
+				Hibernate.initialize(objeto.getMedidor().getZona());
+			}
+		}finally{
+			session.close();
+		}
+		return lista;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Lectura> traerLectura(Medidor medidor, LocalDate date1, LocalDate date2) {
+		List<Lectura> lista=null;
+		try{
+			iniciaOperacion();
+			lista = session.createQuery("from Lectura l where l.medidor.idMedidor = " + medidor.getIdMedidor() + " and  l.fecha >= '" + date2 + "' and  l.fecha <= '" + date1 + "'").list();
 			for (Lectura objeto : lista) {
 				Hibernate.initialize(objeto.getInspector());
 				Hibernate.initialize(objeto.getMedidor());

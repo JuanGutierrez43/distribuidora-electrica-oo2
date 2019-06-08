@@ -52,8 +52,9 @@ public class Lectura {
 
 	@Override
 	public String toString() {
-		return "Lectura [idLectura=" + idLectura + ", fecha=" + fecha + ", inspector=" + inspector + ", medidor="
-				+ medidor + "]";
+		return "Lectura [idLectura=" + idLectura + ", fecha=" + fecha + ", "
+				+ "\n inspector=" + inspector + ", "
+				+ "\n medidor="	+ medidor + "]";
 	}
 	
 	

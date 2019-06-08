@@ -28,8 +28,9 @@ public class BajaDemanda extends Lectura {
 
 	@Override
 	public String toString() {
-		return "BajaDemanda [consumo=" + consumo + ", IdLectura()=" + getIdLectura() + ", Fecha()=" + getFecha()
-				+ ", Inspector()=" + getInspector() + ", Medidor()=" + getMedidor() + "]\n";
+		return "BajaDemanda [consumo=" + consumo + ", IdLectura=" + getIdLectura() + ", Fecha=" + getFecha()
+				+ ",\n Inspector=" + getInspector()
+				+ ",\n Medidor=" + getMedidor() + "]\n";
 	}
 
 }
