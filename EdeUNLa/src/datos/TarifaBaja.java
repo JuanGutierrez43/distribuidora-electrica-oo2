@@ -23,7 +23,13 @@ public class TarifaBaja extends Tarifa {
 
 	@Override
 	public String toString() {
-		return "TarifaBaja [lstDetalle=" + lstDetalle + ", toString=" + super.toString() + "]";
+		return "TarifaBaja [lstDetalle=" +  ", " + super.toString() + "]";
+	}
+
+	@Override
+	public int compareTo(Tarifa tarifa) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }

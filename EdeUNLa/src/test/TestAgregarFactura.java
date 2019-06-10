@@ -20,6 +20,7 @@ public class TestAgregarFactura {
 			System.out.println(factura);
 			abmFactura.alta(factura);
 			
+			
 		} catch (Exception e) {
 			System.out.println(e);
 		}

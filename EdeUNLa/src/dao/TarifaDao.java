@@ -86,17 +86,12 @@ public class TarifaDao {
 			objeto=(Tarifa)session.get(Tarifa.class, idTarifa);
 			if (objeto instanceof TarifaBaja) {
 				Hibernate.initialize(((TarifaBaja) objeto));
-				
 				Set<DetalleBaja> detalles =  ((TarifaBaja) objeto).getLstDetalle();
 				for (DetalleBaja d : detalles) {
 					Hibernate.initialize(d);
 					Hibernate.initialize(d.getTarifaBaja());
-					
 				}
-				
 			}
-			
-			
 		}finally{
 			session.close();
 		}
@@ -109,9 +104,7 @@ public class TarifaDao {
 		try{
 			iniciaOperacion();
 			lista=session.createQuery("from Tarifa t order by t.idTarifa asc").list();
-			
 			List<Tarifa> lsTarifa = lista;
-			
 			for (Tarifa t : lsTarifa) {
 				if (t instanceof TarifaBaja) {
 					Hibernate.initialize(((TarifaBaja)t).getLstDetalle());

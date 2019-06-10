@@ -7,6 +7,7 @@ import datos.Cliente;
 import datos.Medidor;
 import datos.Zona;
 
+
 public class MedidorABM {
 private static MedidorABM instancia = null; // Patrón Singleton
 	
@@ -31,6 +32,11 @@ private static MedidorABM instancia = null; // Patrón Singleton
 	
 	public int agregarMedidor(Cliente cliente, int nroSerie, String domicilioMedidor, Zona zona)throws Exception{
 		Medidor m=new Medidor(cliente, nroSerie, domicilioMedidor, zona);
+		return dao.agregar(m);
+	}
+	
+	public int agregarMedidor(Cliente cliente, int nroSerie, String domicilioMedidor, String potencia, Zona zona)throws Exception{
+		Medidor m=new Medidor(cliente, nroSerie, domicilioMedidor, potencia, zona);
 		return dao.agregar(m);
 	}
 }

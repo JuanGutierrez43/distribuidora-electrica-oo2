@@ -13,9 +13,9 @@
 <property name = "nroSerie" column = "nroSerie" type = "int"/>
 <property name = "domicilioMedidor" column = "domicilioMedidor" type = "string"/>
 <property name = "esBaja" column = "esBaja" type = "boolean"/>
+<property name = "potencia" column = "potencia" type = "string"/>
 
 <many-to-one name = "zona" class = "datos.Zona" column = "idZona" not-null = "true"/>
-
 
 </class>
 </hibernate-mapping>

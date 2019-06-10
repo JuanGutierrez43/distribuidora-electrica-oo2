@@ -5,20 +5,32 @@ public class Medidor {
 	private Cliente cliente;
 	private int nroSerie;
 	private String domicilioMedidor;
+	private String potencia;
 	private boolean esBaja;
 	private Zona zona;
-	
-	
+
 	public Medidor() {
-		
+
 	}
-	
+
 	public Medidor(Cliente cliente, int nroSerie, String domicilioMedidor, Zona zona) {
 		this.cliente = cliente;
 		this.nroSerie = nroSerie;
 		this.domicilioMedidor = domicilioMedidor;
 		this.esBaja = false;
-		this.zona=zona;
+		this.potencia = "BT";
+		this.zona = zona;
+
+	}
+
+	public Medidor(Cliente cliente, int nroSerie, String domicilioMedidor, String potencia, Zona zona) {
+		this.cliente = cliente;
+		this.nroSerie = nroSerie;
+		this.domicilioMedidor = domicilioMedidor;
+		this.esBaja = false;
+		this.potencia = potencia;
+		this.zona = zona;
+
 	}
 
 	public long getIdMedidor() {
@@ -69,12 +81,19 @@ public class Medidor {
 		this.zona = zona;
 	}
 
+	public String getPotencia() {
+		return potencia;
+	}
+
+	public void setPotencia(String potencia) {
+		this.potencia = potencia;
+	}
+
 	@Override
 	public String toString() {
 		return "Medidor [idMedidor=" + idMedidor + ", cliente=" + cliente + ", nroSerie=" + nroSerie
-				+ ", domicilioMedidor=" + domicilioMedidor + ", esBaja=" + esBaja + ", zona=" + zona + "]";
+				+ ", domicilioMedidor=" + domicilioMedidor + ", esBaja=" + esBaja + ", zona=" + zona
+				+ ", potencia contratada: " + getPotencia() + "]";
 	}
 
-	
-	
 }

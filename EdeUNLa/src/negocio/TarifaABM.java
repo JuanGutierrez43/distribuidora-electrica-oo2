@@ -1,12 +1,12 @@
 package negocio;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import dao.TarifaDao;
 import datos.AltaDemanda;
 import datos.BajaDemanda;
-import datos.DetalleAlta;
 import datos.DetalleBaja;
 import datos.Tarifa;
 import datos.TarifaAlta;
@@ -44,7 +44,7 @@ private static TarifaABM instancia = null; // Patrón Singleton
 		return dao.agregar(t);
 	}
 
-	public List<Tarifa> traer(BajaDemanda lectura) {
+	public List<Tarifa> traer(BajaDemanda lectura) { // no lo uso
 		List<Tarifa> lsTarifa = TarifaDao.getInstance().traerTarifas();
 		List<Tarifa> lsTarifaAux = new ArrayList<Tarifa>();;
 		
@@ -63,7 +63,7 @@ private static TarifaABM instancia = null; // Patrón Singleton
 		return lsTarifaAux;
 	}
 	
-	public List<Tarifa> traer(AltaDemanda lectura) { //sin hacer
+	public List<Tarifa> traer(AltaDemanda lectura) { //no lo uso sin hacer
 		List<Tarifa> lsTarifa = TarifaDao.getInstance().traerTarifas();
 		List<Tarifa> lsTarifaAux = new ArrayList<Tarifa>();;
 		
@@ -81,23 +81,42 @@ private static TarifaABM instancia = null; // Patrón Singleton
 		
 		return lsTarifaAux;
 	}
-	
+
 	public List<Tarifa> traerXConsumo(int consumo) {
 		List<Tarifa> lsTarifa = TarifaDao.getInstance().traerTarifas();
-		List<Tarifa> lsTarifaAux = new ArrayList<Tarifa>();;
-		
+		List<Tarifa> lsTarifaAux = new ArrayList<Tarifa>();
 		for (Tarifa t : lsTarifa) {
 			if (t instanceof TarifaBaja) {
-				
+
 				for (DetalleBaja detalle : ((TarifaBaja) t).getLstDetalle()) {
-					if(consumo >= detalle.getDesde() && consumo <= detalle.getHasta()) {
+					if (consumo >= detalle.getDesde() && consumo <= detalle.getHasta()) {
 						lsTarifaAux.add(t);
 					}
 				}
-				
+
 			}
 		}
-		
 		return lsTarifaAux;
 	}
+	
+	public Tarifa traerXConsumoAltaDemanda(int consumo, String potencia) {
+		List<Tarifa> lsTarifa = TarifaDao.getInstance().traerTarifas();
+		List<Tarifa> lsTarifaAux = new ArrayList<Tarifa>();
+		for (Tarifa t : lsTarifa) {
+			if (t instanceof TarifaAlta) {
+				if (potencia.equals(((TarifaAlta) t).getTensionContratada())
+						&& consumo <= ((TarifaAlta) t).getLimite()) {
+					if (lsTarifaAux.size() == 0) {
+						lsTarifaAux.add(t);
+					} else {
+						lsTarifaAux.add(0, t);
+					}
+
+				}
+
+			}
+		}
+		return Collections.min(lsTarifaAux);
+	}
+	
 }

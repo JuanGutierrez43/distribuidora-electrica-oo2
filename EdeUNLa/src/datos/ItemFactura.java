@@ -109,7 +109,7 @@ public class ItemFactura {
 	public String toString() {
 		return "ItemFactura [idItemFactura=" + idItemFactura + ", detalle=" + detalle + ", precioUnitario="
 				+ precioUnitario + ", cantidad=" + cantidad + ", unidad=" + unidad + ", nroMedidor=" + nroMedidor
-				+ ", tarifa=" + tarifa + ", lectura=" + lectura + "]";
+				+ ", tarifa=" + ", lectura=" + lectura + "]";
 	}
 
 

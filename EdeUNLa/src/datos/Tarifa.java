@@ -1,6 +1,6 @@
 package datos;
 
-public class Tarifa {
+public abstract class Tarifa  implements Comparable<Tarifa>{
 
 	private long idTarifa;
 	private String servicio;
@@ -33,5 +33,7 @@ public class Tarifa {
 	public String toString() {
 		return "Tarifa [idTarifa=" + idTarifa + ", servicio=" + servicio + "]\n";
 	}
+
+	public abstract int compareTo(Tarifa tarifa);
 
 }

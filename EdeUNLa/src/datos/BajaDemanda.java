@@ -18,7 +18,7 @@ public class BajaDemanda extends Lectura {
 		return consumo;
 	}
 
-	public int getConsumo(BajaDemanda bajaDemanda) {
+	public int calcularConsumo(BajaDemanda bajaDemanda) {
 		return consumo-bajaDemanda.getConsumo();
 	}
 	
@@ -29,8 +29,7 @@ public class BajaDemanda extends Lectura {
 	@Override
 	public String toString() {
 		return "BajaDemanda [consumo=" + consumo + ", IdLectura=" + getIdLectura() + ", Fecha=" + getFecha()
-				+ ",\n Inspector=" + getInspector()
-				+ ",\n Medidor=" + getMedidor() + "]\n";
+				+ "]\n";
 	}
 
 }

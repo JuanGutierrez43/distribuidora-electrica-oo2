@@ -1,12 +1,16 @@
 package dao;
 
+import java.time.LocalDate;
 import java.util.List;
+import java.util.Set;
 
+import org.hibernate.Hibernate;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import datos.Factura;
+import datos.ItemFactura;
 
 public class FacturaDao {
 	private static FacturaDao instanciaFacturaDao;
@@ -76,6 +80,13 @@ public class FacturaDao {
 		try{
 			iniciaOperacion();
 			objeto=(Factura)session.get(Factura.class, idFactura);
+			Hibernate.initialize(objeto.getLstItem());
+			Set<ItemFactura> lstItem = objeto.getLstItem();
+			for (ItemFactura itemFactura : lstItem) {
+				Hibernate.initialize(itemFactura.getLectura());
+				Hibernate.initialize(itemFactura.getLectura().getInspector());
+				Hibernate.initialize(itemFactura.getLectura().getMedidor());
+			}
 		}finally{
 			session.close();
 		}
@@ -88,11 +99,21 @@ public class FacturaDao {
 		try{
 			iniciaOperacion();
 			lista=session.createQuery("from Factura f order by f.idFactura asc").list();
+			for (Factura factura : lista) {
+				Hibernate.initialize(factura.getLstItem());
+				Set<ItemFactura> lstItem = factura.getLstItem();
+				for (ItemFactura itemFactura : lstItem) {
+					Hibernate.initialize(itemFactura.getLectura());
+					Hibernate.initialize(itemFactura.getLectura().getInspector());
+					Hibernate.initialize(itemFactura.getLectura().getMedidor());
+				}
+			}
 		}finally{
 			session.close();
 		}
 		return lista;
 	}
+
 
 //	public Factura traerFactura(int mes, int anio) {
 //		Factura objeto=null;

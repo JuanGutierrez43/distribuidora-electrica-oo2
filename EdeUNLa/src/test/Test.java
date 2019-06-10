@@ -31,7 +31,7 @@ public class Test {
 			System.out.println(e);
 		}
 
-		// test2
+		// test2.1
 		try {
 			ClienteABM abm = ClienteABM.getInstance();
 			abm.agregarPersonaFisica("Antonio Mentruyt 1443", "leotta010@hotmail.com", 42883850, 1138819260, 40423033,
@@ -39,7 +39,7 @@ public class Test {
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-
+				
 		// test3
 		try {
 			ClienteABM abm = ClienteABM.getInstance();
@@ -48,17 +48,17 @@ public class Test {
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-
-		// test2.2
+		
+		// test2.3 victor
 		try {
 			ClienteABM abm = ClienteABM.getInstance();
-			abm.agregarPersonaFisica("C832", "josevictoribanez@hotmail.com", 42711936, 1141966105, 36068006,
-					"Victor", "Ibañez");
+			abm.agregarPersonaFisica("C832", "josevictoribanez@hotmail.com", 42711936, 1141966105, 36068006, "Victor",
+					"Ibañez");
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-		
-		// test4
+
+		// test4.1
 		try {
 			MedidorABM abmMedidor = MedidorABM.getInstance();
 			ClienteABM abmCliente = ClienteABM.getInstance();
@@ -70,18 +70,38 @@ public class Test {
 			System.out.println(e);
 		}
 		
-		// test4.2 victor
+		// test4.2
+		try {
+			MedidorABM abmMedidor = MedidorABM.getInstance();
+			ClienteABM abmCliente = ClienteABM.getInstance();
+			Cliente c = abmCliente.traer(2);
+			ZonaABM abmZona = ZonaABM.getInstance();
+			Zona z = abmZona.traer(1);
+			abmMedidor.agregarMedidor(c, 2, "Antonio Mentruyt 1443", "AT", z);
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		
+		// test4.3 victor
 		try {
 			MedidorABM abmMedidor = MedidorABM.getInstance();
 			ClienteABM abmCliente = ClienteABM.getInstance();
 			Cliente c = abmCliente.traer(3);
 			ZonaABM abmZona = ZonaABM.getInstance();
 			Zona z = abmZona.traer(1);
-			abmMedidor.agregarMedidor(c, 2, "C832", z);
+			abmMedidor.agregarMedidor(c, 3, "C832", z);
 		} catch (Exception e) {
 			System.out.println(e);
 		}
 
+		// test5 Juan
+		try {
+			InspectorABM abm = InspectorABM.getInstance();
+			abm.agregarInspector("Juan", "Gutierrez", 4014785, 114785632);
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		
 		// test6
 		try {
 			TarifaABM abm = TarifaABM.getInstance();
@@ -98,15 +118,7 @@ public class Test {
 			System.out.println(e);
 		}
 
-		// test7
-		try {
-			InspectorABM abm = InspectorABM.getInstance();
-			abm.agregarInspector("Juan", "Gutierrez", 4014785, 114785632);
-		} catch (Exception e) {
-			System.out.println(e);
-		}
-
-		// test8
+		// test6.2
 		try {
 			DetalleBajaABM abm = DetalleBajaABM.getInstance();
 			TarifaABM abmTarifa = TarifaABM.getInstance();
@@ -150,7 +162,7 @@ public class Test {
 			System.out.println(e);
 		}
 
-		// test9
+		// test7
 		try {
 			TarifaABM abm = TarifaABM.getInstance();
 			abm.agregarTarifaAlta("BT<300kW", "BT", 300);
@@ -163,7 +175,7 @@ public class Test {
 			System.out.println(e);
 		}
 		
-		// test13
+		// test7.2
 		try{
 			DetalleAltaABM abm = DetalleAltaABM.getInstance();
 			TarifaABM abmTarifa = TarifaABM.getInstance();
@@ -207,54 +219,163 @@ public class Test {
 			System.out.println(e);
 		}
 
-		// test10
+		
+		// test10.1 eze2
+		try {
+			LecturaABM abm = LecturaABM.getInstance();
+			InspectorABM abmInspector = InspectorABM.getInstance();
+			Inspector i = abmInspector.traer(1);
+			MedidorABM abmMedidor = MedidorABM.getInstance();
+			Medidor m = abmMedidor.traer(2);
+			abm.agregarLecturaAltaDemanda(LocalDate.of(2018, 10, 10), i, m, 100, 200, 300);
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		
+		// test10.2 eze2
+		try {
+			LecturaABM abm = LecturaABM.getInstance();
+			InspectorABM abmInspector = InspectorABM.getInstance();
+			Inspector i = abmInspector.traer(1);
+			MedidorABM abmMedidor = MedidorABM.getInstance();
+			Medidor m = abmMedidor.traer(2);
+			abm.agregarLecturaAltaDemanda(LocalDate.of(2018, 12, 10), i, m, 250, 400, 500);
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		
+		// test10.3 eze2
+		try {
+			LecturaABM abm = LecturaABM.getInstance();
+			InspectorABM abmInspector = InspectorABM.getInstance();
+			Inspector i = abmInspector.traer(1);
+			MedidorABM abmMedidor = MedidorABM.getInstance();
+			Medidor m = abmMedidor.traer(2);
+			abm.agregarLecturaAltaDemanda(LocalDate.of(2019, 2, 18), i, m, 400, 622, 759);
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+
+		
+		// test11.1 eze1
 		try {
 			LecturaABM abm = LecturaABM.getInstance();
 			InspectorABM abmInspector = InspectorABM.getInstance();
 			Inspector i = abmInspector.traer(1);
 			MedidorABM abmMedidor = MedidorABM.getInstance();
 			Medidor m = abmMedidor.traer(1);
-			abm.agregarLecturaAltaDemanda(LocalDate.now(), i, m, 100, 200, 300);
+			abm.agregarLecturaBajaDemanda(LocalDate.of(2018, 10, 10), i, m, 500);
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-
-		// test11
+		
+		// test11.2 eze1
 		try {
 			LecturaABM abm = LecturaABM.getInstance();
 			InspectorABM abmInspector = InspectorABM.getInstance();
 			Inspector i = abmInspector.traer(1);
 			MedidorABM abmMedidor = MedidorABM.getInstance();
 			Medidor m = abmMedidor.traer(1);
-			abm.agregarLecturaBajaDemanda(LocalDate.now(), i, m, 500);
+			abm.agregarLecturaBajaDemanda(LocalDate.of(2018, 12, 10), i, m, 950);
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+			
+		// test11.3 eze1
+		try {
+			LecturaABM abm = LecturaABM.getInstance();
+			InspectorABM abmInspector = InspectorABM.getInstance();
+			Inspector i = abmInspector.traer(1);
+			MedidorABM abmMedidor = MedidorABM.getInstance();
+			Medidor m = abmMedidor.traer(1);
+			abm.agregarLecturaBajaDemanda(LocalDate.of(2019, 2, 10), i, m, 1610);
 		} catch (Exception e) {
 			System.out.println(e);
 		}
 		
-		// test11.2 victor
-				try {
-					LecturaABM abm = LecturaABM.getInstance();
-					InspectorABM abmInspector = InspectorABM.getInstance();
-					Inspector i = abmInspector.traer(1);
-					MedidorABM abmMedidor = MedidorABM.getInstance();
-					Medidor m = abmMedidor.traer(2);
-					abm.agregarLecturaBajaDemanda(LocalDate.of(2018, 12, 10), i, m, 200);
-				} catch (Exception e) {
-					System.out.println(e);
-				}
+		// test12.1 victor
+		try {
+			LecturaABM abm = LecturaABM.getInstance();
+			InspectorABM abmInspector = InspectorABM.getInstance();
+			Inspector i = abmInspector.traer(1);
+			MedidorABM abmMedidor = MedidorABM.getInstance();
+			Medidor m = abmMedidor.traer(3);
+			abm.agregarLecturaBajaDemanda(LocalDate.of(2018, 12, 10), i, m, 200);
+		} catch (Exception e) {
+			System.out.println(e);
+		}
 
-				try {
-					LecturaABM abm = LecturaABM.getInstance();
-					InspectorABM abmInspector = InspectorABM.getInstance();
-					Inspector i = abmInspector.traer(1);
-					MedidorABM abmMedidor = MedidorABM.getInstance();
-					Medidor m = abmMedidor.traer(2);
-					abm.agregarLecturaBajaDemanda(LocalDate.of(2019, 2, 10), i, m, 515);
-				} catch (Exception e) {
-					System.out.println(e);
-				}
+		// test12.1 victor
+		try {
+			LecturaABM abm = LecturaABM.getInstance();
+			InspectorABM abmInspector = InspectorABM.getInstance();
+			Inspector i = abmInspector.traer(1);
+			MedidorABM abmMedidor = MedidorABM.getInstance();
+			Medidor m = abmMedidor.traer(3);
+			abm.agregarLecturaBajaDemanda(LocalDate.of(2019, 2, 10), i, m, 515);
+		} catch (Exception e) {
+			System.out.println(e);
+		}
 		
-		// test12 Factura1
+		
+
+		
+		// test21.1 Factura1 eze1
+		try {
+			FacturaABM abmFactura = FacturaABM.getInstance();
+			Factura factura = abmFactura.generarFactura(MedidorABM.getInstance().traer(1), 10, 2018);
+			abmFactura.alta(factura);
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+
+		// test21.2 Factura2 eze1
+		try {
+			FacturaABM abmFactura = FacturaABM.getInstance();
+			Factura factura = abmFactura.generarFactura(MedidorABM.getInstance().traer(1), 12, 2018);
+			abmFactura.alta(factura);
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		
+		
+		// test20.1 Factura1 victor
+		try {
+			FacturaABM abmFactura = FacturaABM.getInstance();
+			Factura factura = abmFactura.generarFactura(MedidorABM.getInstance().traer(3), 12, 2018);
+			abmFactura.alta(factura);
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+
+		// test20.2 Factura2 victor
+		try {
+			FacturaABM abmFactura = FacturaABM.getInstance();
+			Factura factura = abmFactura.generarFactura(MedidorABM.getInstance().traer(3), 2, 2019);
+			abmFactura.alta(factura);
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		
+		
+		// test21.2 Factura2 eze1
+		try {
+			FacturaABM abmFactura = FacturaABM.getInstance();
+			Factura factura = abmFactura.generarFactura(MedidorABM.getInstance().traer(1), 2, 2019);
+			abmFactura.alta(factura);
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		
+		// test22.1 Factura1 eze2
+		try {
+			FacturaABM abmFactura = FacturaABM.getInstance();
+			Factura factura = abmFactura.generarFactura(MedidorABM.getInstance().traer(2), 10, 2018);
+			abmFactura.alta(factura);
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		// test22.2 Factura2 eze2
 		try {
 			FacturaABM abmFactura = FacturaABM.getInstance();
 			Factura factura = abmFactura.generarFactura(MedidorABM.getInstance().traer(2), 12, 2018);
@@ -262,8 +383,7 @@ public class Test {
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-
-		// test13 Factura2
+		// test22.3 Factura3 eze2
 		try {
 			FacturaABM abmFactura = FacturaABM.getInstance();
 			Factura factura = abmFactura.generarFactura(MedidorABM.getInstance().traer(2), 2, 2019);
@@ -271,7 +391,6 @@ public class Test {
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-		
 	}
 
 }

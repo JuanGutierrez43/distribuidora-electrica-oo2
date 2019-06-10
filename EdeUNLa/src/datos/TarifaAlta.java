@@ -2,7 +2,7 @@ package datos;
 
 import java.util.Set;
 
-public class TarifaAlta extends Tarifa {
+public class TarifaAlta extends Tarifa implements Comparable<Tarifa> {
 
 	private String tensionContratada;
 	private int limite;
@@ -44,8 +44,20 @@ public class TarifaAlta extends Tarifa {
 	@Override
 	public String toString() {
 		return "TarifaAlta [tensionContratada=" + tensionContratada + ", limite=" + limite + ", lstDetalle="
-				+ lstDetalle +"]\n";
+				+ "]\n";
 	}
 
+	@Override
+	public int compareTo(Tarifa tarifa) {
+		int resultado = 0;
+		if (this.getLimite() < ((TarifaAlta)tarifa).getLimite()) {
+			resultado = -1;
+		} else if (this.getLimite() >  ((TarifaAlta)tarifa).getLimite()) {
+			resultado = 1;
+		} else {
+			resultado = 0;
+		}
+		return resultado;
+	}
 	
 }

@@ -2,7 +2,7 @@ package datos;
 
 import java.time.LocalDate;
 
-public class Lectura {
+public class Lectura implements Comparable<Lectura> {
 	private long idLectura;
 	private LocalDate fecha;
 	private Inspector inspector;
@@ -55,6 +55,19 @@ public class Lectura {
 		return "Lectura [idLectura=" + idLectura + ", fecha=" + fecha + ", "
 				+ "\n inspector=" + inspector + ", "
 				+ "\n medidor="	+ medidor + "]";
+	}
+
+	@Override
+	public int compareTo(Lectura lectura) {
+		int resultado = 0;
+		if (this.fecha.isBefore(lectura.getFecha())) {
+			resultado = -1;
+		} else if (this.fecha.isAfter(lectura.getFecha())) {
+			resultado = 1;
+		} else {
+			resultado = 0;
+		}
+		return resultado;
 	}
 	
 	
