@@ -90,9 +90,9 @@ CREATE TABLE IF NOT EXISTS `bd-hibernate-edeunla`.`medidor` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = latin1;
 
-CREATE INDEX `medidor_cliente_idx` ON `bd-hibernate-edeunla`.`medidor` (`idCliente` ASC) VISIBLE;
+CREATE INDEX `medidor_cliente_idx` ON `bd-hibernate-edeunla`.`medidor` (`idCliente` ASC);
 
-CREATE INDEX `fk_medidor_zona_idx` ON `bd-hibernate-edeunla`.`medidor` (`idZona` ASC) INVISIBLE;
+CREATE INDEX `fk_medidor_zona_idx` ON `bd-hibernate-edeunla`.`medidor` (`idZona` ASC);
 
 
 -- -----------------------------------------------------
@@ -115,9 +115,9 @@ CREATE TABLE IF NOT EXISTS `bd-hibernate-edeunla`.`lectura` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = latin1;
 
-CREATE INDEX `lectura_medidor_idx` ON `bd-hibernate-edeunla`.`lectura` (`idMedidor` ASC) VISIBLE;
+CREATE INDEX `lectura_medidor_idx` ON `bd-hibernate-edeunla`.`lectura` (`idMedidor` ASC) ;
 
-CREATE INDEX `lectura_inspector_idx` ON `bd-hibernate-edeunla`.`lectura` (`idInspector` ASC) VISIBLE;
+CREATE INDEX `lectura_inspector_idx` ON `bd-hibernate-edeunla`.`lectura` (`idInspector` ASC) ;
 
 
 -- -----------------------------------------------------
@@ -203,7 +203,7 @@ CREATE TABLE IF NOT EXISTS `bd-hibernate-edeunla`.`detallealta` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = latin1;
 
-CREATE INDEX `detalleAlta_tarifaAlta_idx` ON `bd-hibernate-edeunla`.`detallealta` (`idTarifaAlta` ASC) VISIBLE;
+CREATE INDEX `detalleAlta_tarifaAlta_idx` ON `bd-hibernate-edeunla`.`detallealta` (`idTarifaAlta` ASC) ;
 
 
 -- -----------------------------------------------------
@@ -241,7 +241,7 @@ CREATE TABLE IF NOT EXISTS `bd-hibernate-edeunla`.`detallebaja` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = latin1;
 
-CREATE INDEX `detalleBaja_tarifaBaja_idx` ON `bd-hibernate-edeunla`.`detallebaja` (`idTarifaBaja` ASC) VISIBLE;
+CREATE INDEX `detalleBaja_tarifaBaja_idx` ON `bd-hibernate-edeunla`.`detallebaja` (`idTarifaBaja` ASC) ;
 
 
 -- -----------------------------------------------------
@@ -277,9 +277,9 @@ CREATE TABLE IF NOT EXISTS `bd-hibernate-edeunla`.`inspectorxzona` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = latin1;
 
-CREATE INDEX `fk_Inspector_has_Zona_Zona1_idx` ON `bd-hibernate-edeunla`.`inspectorxzona` (`idZona` ASC) VISIBLE;
+CREATE INDEX `fk_Inspector_has_Zona_Zona1_idx` ON `bd-hibernate-edeunla`.`inspectorxzona` (`idZona` ASC) ;
 
-CREATE INDEX `fk_Inspector_has_Zona_Inspector_idx` ON `bd-hibernate-edeunla`.`inspectorxzona` (`idInspector` ASC) VISIBLE;
+CREATE INDEX `fk_Inspector_has_Zona_Inspector_idx` ON `bd-hibernate-edeunla`.`inspectorxzona` (`idInspector` ASC) ;
 
 
 -- -----------------------------------------------------
@@ -310,11 +310,11 @@ CREATE TABLE IF NOT EXISTS `bd-hibernate-edeunla`.`itemfactura` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = latin1;
 
-CREATE INDEX `itemFactura_lectura_idx` ON `bd-hibernate-edeunla`.`itemfactura` (`idLectura` ASC) VISIBLE;
+CREATE INDEX `itemFactura_lectura_idx` ON `bd-hibernate-edeunla`.`itemfactura` (`idLectura` ASC) ;
 
-CREATE INDEX `itemFactura_factura_idx` ON `bd-hibernate-edeunla`.`itemfactura` (`idFactura` ASC) VISIBLE;
+CREATE INDEX `itemFactura_factura_idx` ON `bd-hibernate-edeunla`.`itemfactura` (`idFactura` ASC) ;
 
-CREATE INDEX `itemFactura_tarifa_idx` ON `bd-hibernate-edeunla`.`itemfactura` (`idTarifa` ASC) VISIBLE;
+CREATE INDEX `itemFactura_tarifa_idx` ON `bd-hibernate-edeunla`.`itemfactura` (`idTarifa` ASC) ;
 
 
 -- -----------------------------------------------------
